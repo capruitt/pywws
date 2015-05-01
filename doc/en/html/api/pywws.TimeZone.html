@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.TimeZone &mdash; pywws 15.03.0.dev1281 documentation</title>
+    <title>pywws.TimeZone &mdash; pywws 15.05.0.dev1287 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '15.03.0.dev1281',
+        VERSION:     '15.05.0.dev1287',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 15.03.0.dev1281 documentation" href="../index.html" />
+    <link rel="top" title="pywws 15.05.0.dev1287 documentation" href="../index.html" />
     <link rel="up" title="Python programs and modules" href="../api_index.html" />
     <link rel="next" title="pywws.Localisation" href="pywws.Localisation.html" />
     <link rel="prev" title="pywws.DataStore" href="pywws.DataStore.html" /> 
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="pywws.DataStore.html" title="pywws.DataStore"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="../api_index.html" accesskey="U">Python programs and modules</a> &raquo;</li> 
       </ul>
     </div>  
@@ -57,18 +57,15 @@
             
   <div class="section" id="module-pywws.TimeZone">
 <span id="pywws-timezone"></span><h1>pywws.TimeZone<a class="headerlink" href="#module-pywws.TimeZone" title="Permalink to this headline">¶</a></h1>
-<p>Provide a couple of <code class="xref py py-class docutils literal"><span class="pre">datetime.tzinfo</span></code> objects
+<p>Provide a couple of <code class="xref py py-class docutils literal"><span class="pre">datetime.tzinfo</span></code> compatible objects
 representing local time and UTC.</p>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>This module provides two <code class="xref py py-class docutils literal"><span class="pre">datetime.tzinfo</span></code> objects
+<p>This module provides two <code class="xref py py-class docutils literal"><span class="pre">datetime.tzinfo</span></code> compatible objects
 representing UTC and local time zones. These are used to convert
-timestamps to and from UTC and local time. The weather station
-software stores data with UTC timestamps, to avoid problems with
-daylight savings time, but the template and plot programs output data
-with local times.</p>
-<p>The module is copied directly from the <code class="xref py py-class docutils literal"><span class="pre">datetime.tzinfo</span></code>
-module documentation.</p>
+timestamps to and from UTC and local time. The weather station software
+stores data with UTC timestamps, to avoid problems with daylight savings
+time, but the template and plot programs output data with local times.</p>
 </div>
 <div class="section" id="detailed-api">
 <h2>Detailed API<a class="headerlink" href="#detailed-api" title="Permalink to this headline">¶</a></h2>
@@ -91,64 +88,11 @@ module documentation.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#pywws.TimeZone.LocalTimezone" title="pywws.TimeZone.LocalTimezone"><code class="xref py py-obj docutils literal"><span class="pre">LocalTimezone</span></code></a></td>
-<td>Local time</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#pywws.TimeZone.UTC" title="pywws.TimeZone.UTC"><code class="xref py py-obj docutils literal"><span class="pre">UTC</span></code></a></td>
-<td></td>
-</tr>
 <tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>(year,&nbsp;month,&nbsp;day[,&nbsp;hour[,&nbsp;minute[,&nbsp;...)</td>
 <td>The year, month and day arguments are required.</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">timedelta</span></code></td>
-<td>Difference between two datetime values.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tzinfo</span></code></td>
-<td>Abstract base class for time zone info objects.</td>
-</tr>
 </tbody>
 </table>
-<dl class="class">
-<dt id="pywws.TimeZone.UTC">
-<em class="property">class </em><code class="descclassname">pywws.TimeZone.</code><code class="descname">UTC</code><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="pywws.TimeZone.UTC.utcoffset">
-<code class="descname">utcoffset</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC.utcoffset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC.utcoffset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pywws.TimeZone.UTC.tzname">
-<code class="descname">tzname</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC.tzname"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC.tzname" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pywws.TimeZone.UTC.dst">
-<code class="descname">dst</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC.dst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC.dst" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="pywws.TimeZone.LocalTimezone">
-<em class="property">class </em><code class="descclassname">pywws.TimeZone.</code><code class="descname">LocalTimezone</code><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone" title="Permalink to this definition">¶</a></dt>
-<dd><p>Local time</p>
-<dl class="method">
-<dt id="pywws.TimeZone.LocalTimezone.utcoffset">
-<code class="descname">utcoffset</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone.utcoffset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone.utcoffset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pywws.TimeZone.LocalTimezone.dst">
-<code class="descname">dst</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone.dst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone.dst" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pywws.TimeZone.LocalTimezone.tzname">
-<code class="descname">tzname</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone.tzname"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone.tzname" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
 <dl class="function">
 <dt id="pywws.TimeZone.main">
 <code class="descclassname">pywws.TimeZone.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.main" title="Permalink to this definition">¶</a></dt>
@@ -216,7 +160,7 @@ module documentation.</p>
         <li class="right" >
           <a href="pywws.DataStore.html" title="pywws.DataStore"
              >previous</a> |</li>
-        <li><a href="../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="../api_index.html" >Python programs and modules</a> &raquo;</li> 
       </ul>
     </div>

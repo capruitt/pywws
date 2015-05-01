@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.Tasks &mdash; pywws 15.03.0.dev1281 documentation</title>
+    <title>pywws.Tasks &mdash; pywws 15.05.0.dev1287 documentation</title>
     
     <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '15.03.0.dev1281',
+        VERSION:     '15.05.0.dev1287',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 15.03.0.dev1281 documentation" href="../../index.html" />
+    <link rel="top" title="pywws 15.05.0.dev1287 documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" /> 
   </head>
   <body role="document">
@@ -37,7 +37,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -52,7 +52,7 @@
 
 <span class="c"># pywws - Python software for USB Wireless Weather Stations</span>
 <span class="c"># http://github.com/jim-easterbrook/pywws</span>
-<span class="c"># Copyright (C) 2008-14  Jim Easterbrook  jim@jim-easterbrook.me.uk</span>
+<span class="c"># Copyright (C) 2008-15  pywws contributors</span>
 
 <span class="c"># This program is free software; you can redistribute it and/or</span>
 <span class="c"># modify it under the terms of the GNU General Public License</span>
@@ -227,6 +227,8 @@
                 <span class="n">service</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%d</span><span class="s"> records sent&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
         <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">uploads_queue</span><span class="p">:</span>
             <span class="nb">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uploads_queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
+                <span class="k">continue</span>
             <span class="n">targ</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uploads_directory</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="nb">file</span><span class="p">))</span>
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">targ</span><span class="p">):</span>
                 <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">targ</span><span class="p">)</span>
@@ -493,7 +495,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>

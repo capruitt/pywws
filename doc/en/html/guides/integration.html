@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>How to integrate pywws with various weather services &mdash; pywws 15.03.0.dev1281 documentation</title>
+    <title>How to integrate pywws with various weather services &mdash; pywws 15.05.0.dev1287 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '15.03.0.dev1281',
+        VERSION:     '15.05.0.dev1287',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 15.03.0.dev1281 documentation" href="../index.html" />
+    <link rel="top" title="pywws 15.05.0.dev1287 documentation" href="../index.html" />
     <link rel="up" title="User guides" href="index.html" />
     <link rel="next" title="How to configure pywws to post messages to Twitter" href="twitter.html" />
     <link rel="prev" title="How to set up ‘live’ logging with pywws" href="livelogging.html" /> 
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="livelogging.html" title="How to set up ‘live’ logging with pywws"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">User guides</a> &raquo;</li> 
       </ul>
     </div>  
@@ -110,6 +110,13 @@ The following subsections give further information about some of the available s
 designator = EW9999
 latitude = 5130.06N
 longitude = 00008.52E
+template = default
+
+[logged]
+services = [&#39;cwop&#39;, &#39;underground&#39;]
+
+[live]
+services = [&#39;cwop&#39;, &#39;underground_rf&#39;]
 </pre></div>
 </div>
 <p>or, for radio hams:</p>
@@ -118,6 +125,13 @@ designator = G4XXX
 passcode = xxxxxx
 latitude = 5130.06N
 longitude = 00008.52E
+template = default
+
+[logged]
+services = [&#39;cwop_ham&#39;, &#39;underground&#39;]
+
+[live]
+services = [&#39;cwop_ham&#39;, &#39;underground_rf&#39;]
 </pre></div>
 </div>
 </li>
@@ -153,6 +167,10 @@ retain = True
 auth = False
 user = unknown
 password = unknown
+template = default
+
+[logged]
+services = [&#39;mqtt&#39;, &#39;underground&#39;]
 </pre></div>
 </div>
 </li>
@@ -189,6 +207,10 @@ TLS (mqtt data encryption) is not yet implemented.</p>
 <div class="highlight-python"><div class="highlight"><pre>[metoffice]
 site id = 12345678
 aws pin = 987654
+template = default
+
+[logged]
+services = [&#39;metoffice&#39;, &#39;underground&#39;]
 </pre></div>
 </div>
 </li>
@@ -211,6 +233,10 @@ alt = 10
 user = Elizabeth Windsor
 password = corgi
 id = Buck House
+template = default
+
+[logged]
+services = [&#39;openweathermap&#39;, &#39;underground&#39;]
 </pre></div>
 </div>
 </li>
@@ -233,6 +259,10 @@ Make sure you don&#8217;t choose a name that is already in use.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">pwsweather</span><span class="p">]</span>
 <span class="n">station</span> <span class="o">=</span> <span class="n">ABCDEFGH1</span>
 <span class="n">password</span> <span class="o">=</span> <span class="n">xxxxxxx</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">default</span>
+
+<span class="p">[</span><span class="n">logged</span><span class="p">]</span>
+<span class="n">services</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;pwsweather&#39;</span><span class="p">,</span> <span class="s">&#39;underground&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
@@ -247,6 +277,10 @@ Make sure you don&#8217;t choose a name that is already in use.</p>
 <div class="highlight-python"><div class="highlight"><pre>[temperaturnu]
 id = ???
 town = ???
+template = default
+
+[logged]
+services = [&#39;temperaturnu&#39;, &#39;underground&#39;]
 </pre></div>
 </div>
 </li>
@@ -263,6 +297,10 @@ town = ???
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">underground</span><span class="p">]</span>
 <span class="n">station</span> <span class="o">=</span> <span class="n">ABCDEFGH1</span>
 <span class="n">password</span> <span class="o">=</span> <span class="n">xxxxxxx</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">default</span>
+
+<span class="p">[</span><span class="n">logged</span><span class="p">]</span>
+<span class="n">services</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;underground&#39;</span><span class="p">,</span> <span class="s">&#39;metoffice&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
@@ -276,7 +314,7 @@ If you run pywws in &#8216;live logging&#8217; mode (see <a class="reference int
 <span class="n">services</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;underground_rf&#39;</span><span class="p">]</span>
 
 <span class="p">[</span><span class="n">logged</span><span class="p">]</span>
-<span class="n">services</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;underground&#39;</span><span class="p">]</span>
+<span class="n">services</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;underground&#39;</span><span class="p">,</span> <span class="s">&#39;metoffice&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Make sure you still have an &#8216;underground&#8217; service in <code class="docutils literal"><span class="pre">[logged]</span></code> or <code class="docutils literal"><span class="pre">[hourly]</span></code>.
@@ -293,6 +331,13 @@ This will ensure that &#8216;catchup&#8217; records are sent to fill in any gaps
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">wetterarchivde</span><span class="p">]</span>
 <span class="n">user_id</span> <span class="o">=</span> <span class="mi">12345</span>
 <span class="n">kennwort</span> <span class="o">=</span> <span class="n">ab1d3456i8</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">default</span>
+
+<span class="p">[</span><span class="n">logged</span><span class="p">]</span>
+<span class="n">services</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;wetterarchivde&#39;</span><span class="p">,</span> <span class="s">&#39;underground&#39;</span><span class="p">]</span>
+
+<span class="p">[</span><span class="n">live</span><span class="p">]</span>
+<span class="n">services</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;wetterarchivde&#39;</span><span class="p">,</span> <span class="s">&#39;underground_rf&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
@@ -372,7 +417,7 @@ This will ensure that &#8216;catchup&#8217; records are sent to fill in any gaps
         <li class="right" >
           <a href="livelogging.html" title="How to set up ‘live’ logging with pywws"
              >previous</a> |</li>
-        <li><a href="../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="index.html" >User guides</a> &raquo;</li> 
       </ul>
     </div>

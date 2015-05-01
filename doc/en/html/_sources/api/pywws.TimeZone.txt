@@ -19,11 +19,7 @@ pywws.TimeZone
 
    .. autosummary::
    
-      LocalTimezone
-      UTC
       datetime
-      timedelta
-      tzinfo
    
    
 

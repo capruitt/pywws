@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.toservice &mdash; pywws 15.03.0.dev1281 documentation</title>
+    <title>pywws.toservice &mdash; pywws 15.05.0.dev1287 documentation</title>
     
     <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '15.03.0.dev1281',
+        VERSION:     '15.05.0.dev1287',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 15.03.0.dev1281 documentation" href="../../index.html" />
+    <link rel="top" title="pywws 15.05.0.dev1287 documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" /> 
   </head>
   <body role="document">
@@ -37,7 +37,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -52,7 +52,7 @@
 
 <span class="c"># pywws - Python software for USB Wireless Weather Stations</span>
 <span class="c"># http://github.com/jim-easterbrook/pywws</span>
-<span class="c"># Copyright (C) 2008-15  Jim Easterbrook  jim@jim-easterbrook.me.uk</span>
+<span class="c"># Copyright (C) 2008-15  pywws contributors</span>
 
 <span class="c"># This program is free software; you can redistribute it and/or</span>
 <span class="c"># modify it under the terms of the GNU General Public License</span>
@@ -164,6 +164,16 @@
 <span class="sd">Restart your regular pywws program (:py:mod:`pywws.Hourly` or</span>
 <span class="sd">:py:mod:`pywws.LiveLog`) and visit the appropriate web site to</span>
 <span class="sd">see regular updates from your weather station.</span>
+
+<span class="sd">Using a different template</span>
+<span class="sd">--------------------------</span>
+
+<span class="sd">For some services (mainly MQTT) you might want to write your own</span>
+<span class="sd">template to give greater control over the uploaded data. Copy the</span>
+<span class="sd">default template file from ``pywws/services`` to your template directory</span>
+<span class="sd">and then edit it to do what you want. Now edit ``weather.ini`` and</span>
+<span class="sd">change the ``template`` value from ``default`` to the name of your</span>
+<span class="sd">custom template.</span>
 
 <span class="sd">API</span>
 <span class="sd">---</span>
@@ -278,12 +288,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">templater</span> <span class="o">=</span> <span class="n">Template</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span>
             <span class="n">use_locale</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-        <span class="n">template_name</span> <span class="o">=</span> <span class="s">&#39;services/</span><span class="si">%s</span><span class="s">_template_</span><span class="si">%s</span><span class="s">.txt&#39;</span> <span class="o">%</span> <span class="p">(</span>
-            <span class="n">config_section</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;config&#39;</span><span class="p">,</span> <span class="s">&#39;ws type&#39;</span><span class="p">))</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_exists</span><span class="p">(</span><span class="s">&#39;pywws&#39;</span><span class="p">,</span> <span class="n">template_name</span><span class="p">):</span>
-            <span class="n">template_name</span> <span class="o">=</span> <span class="s">&#39;services/</span><span class="si">%s</span><span class="s">_template_1080.txt&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">config_section</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">template_file</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_stream</span><span class="p">(</span>
-            <span class="s">&#39;pywws&#39;</span><span class="p">,</span> <span class="n">template_name</span><span class="p">)</span>
+        <span class="n">template_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">config_section</span><span class="p">,</span> <span class="s">&#39;template&#39;</span><span class="p">,</span> <span class="s">&#39;default&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">template_name</span> <span class="o">!=</span> <span class="s">&#39;default&#39;</span><span class="p">:</span>
+            <span class="n">template_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="s">&#39;paths&#39;</span><span class="p">,</span> <span class="s">&#39;templates&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s">&#39;~/weather/templates/&#39;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">template_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">template_dir</span><span class="p">,</span> <span class="n">template_name</span><span class="p">),</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">template_name</span> <span class="o">=</span> <span class="s">&#39;services/</span><span class="si">%s</span><span class="s">_template_</span><span class="si">%s</span><span class="s">.txt&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                <span class="n">config_section</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;config&#39;</span><span class="p">,</span> <span class="s">&#39;ws type&#39;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_exists</span><span class="p">(</span><span class="s">&#39;pywws&#39;</span><span class="p">,</span> <span class="n">template_name</span><span class="p">):</span>
+                <span class="n">template_name</span> <span class="o">=</span> <span class="s">&#39;services/</span><span class="si">%s</span><span class="s">_template_1080.txt&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">config_section</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">template_file</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_stream</span><span class="p">(</span>
+                <span class="s">&#39;pywws&#39;</span><span class="p">,</span> <span class="n">template_name</span><span class="p">)</span>
         <span class="c"># get other parameters</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">auth_type</span> <span class="o">=</span> <span class="n">service_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;config&#39;</span><span class="p">,</span> <span class="s">&#39;auth_type&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_type</span> <span class="o">==</span> <span class="s">&#39;basic&#39;</span><span class="p">:</span>
@@ -693,7 +710,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>

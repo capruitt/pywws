@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.Plot &mdash; pywws 15.03.0.dev1281 documentation</title>
+    <title>pywws.Plot &mdash; pywws 15.05.0.dev1287 documentation</title>
     
     <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '15.03.0.dev1281',
+        VERSION:     '15.05.0.dev1287',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 15.03.0.dev1281 documentation" href="../../index.html" />
+    <link rel="top" title="pywws 15.05.0.dev1287 documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" /> 
   </head>
   <body role="document">
@@ -37,7 +37,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
@@ -53,7 +53,7 @@
 
 <span class="c"># pywws - Python software for USB Wireless Weather Stations</span>
 <span class="c"># http://github.com/jim-easterbrook/pywws</span>
-<span class="c"># Copyright (C) 2008-14  Jim Easterbrook  jim@jim-easterbrook.me.uk</span>
+<span class="c"># Copyright (C) 2008-15  pywws contributors</span>
 
 <span class="c"># This program is free software; you can redistribute it and/or</span>
 <span class="c"># modify it under the terms of the GNU General Public License</span>
@@ -513,7 +513,7 @@
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">DataStore</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Localisation</span>
 <span class="kn">from</span> <span class="nn">.Logger</span> <span class="kn">import</span> <span class="n">ApplicationLogger</span>
-<span class="kn">from</span> <span class="nn">.TimeZone</span> <span class="kn">import</span> <span class="n">Local</span>
+<span class="kn">from</span> <span class="nn">.TimeZone</span> <span class="kn">import</span> <span class="n">Local</span><span class="p">,</span> <span class="n">utc</span>
 
 <div class="viewcode-block" id="GraphNode"><a class="viewcode-back" href="../../api/pywws.Plot.html#pywws.Plot.GraphNode">[docs]</a><span class="k">class</span> <span class="nc">GraphNode</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
@@ -752,6 +752,10 @@
         <span class="n">pressure_offset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pressure_offset</span>
         <span class="c"># label x axis of last plot</span>
         <span class="k">if</span> <span class="n">plot_no</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">plot_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">x_lo</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_lo</span> <span class="o">-</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">Local</span><span class="p">)</span>
+            <span class="n">x_hi</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_hi</span> <span class="o">-</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">Local</span><span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">duration</span> <span class="o">&lt;=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">24</span><span class="p">):</span>
                 <span class="c"># TX_NOTE Keep the &quot;(%Z)&quot; formatting string</span>
                 <span class="n">xlabel</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s">&#39;Time (%Z)&#39;</span><span class="p">)</span>
@@ -762,14 +766,13 @@
             <span class="n">xlabel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s">&#39;xlabel&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
                 <span class="n">xlabel</span> <span class="o">=</span> <span class="n">xlabel</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
-            <span class="n">result</span> <span class="o">+=</span> <span class="s">&#39;set xlabel &quot;</span><span class="si">%s</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">x_hi</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">Local</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">xlabel</span><span class="p">))</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="s">&#39;set xlabel &quot;</span><span class="si">%s</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x_hi</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">xlabel</span><span class="p">))</span>
             <span class="n">dateformat</span> <span class="o">=</span> <span class="s">&#39;%Y/%m/</span><span class="si">%d</span><span class="s">&#39;</span>
             <span class="n">dateformat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s">&#39;dateformat&#39;</span><span class="p">,</span> <span class="n">dateformat</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
                 <span class="n">dateformat</span> <span class="o">=</span> <span class="n">dateformat</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
-            <span class="n">ldat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_lo</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">Local</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">dateformat</span><span class="p">)</span>
-            <span class="n">rdat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_hi</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">Local</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">dateformat</span><span class="p">)</span>
+            <span class="n">ldat</span> <span class="o">=</span> <span class="n">x_lo</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">dateformat</span><span class="p">)</span>
+            <span class="n">rdat</span> <span class="o">=</span> <span class="n">x_hi</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">dateformat</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">ldat</span><span class="p">:</span>
                 <span class="n">result</span> <span class="o">+=</span> <span class="s">&#39;set label &quot;</span><span class="si">%s</span><span class="s">&quot; at &quot;</span><span class="si">%s</span><span class="s">&quot;, graph -0.3 left</span><span class="se">\n</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span>
                     <span class="n">ldat</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_lo</span><span class="o">.</span><span class="n">isoformat</span><span class="p">())</span>
@@ -979,7 +982,7 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>

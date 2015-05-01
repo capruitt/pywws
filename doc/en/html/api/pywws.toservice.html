@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.toservice &mdash; pywws 15.03.0.dev1281 documentation</title>
+    <title>pywws.toservice &mdash; pywws 15.05.0.dev1287 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '15.03.0.dev1281',
+        VERSION:     '15.05.0.dev1287',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 15.03.0.dev1281 documentation" href="../index.html" />
+    <link rel="top" title="pywws 15.05.0.dev1287 documentation" href="../index.html" />
     <link rel="up" title="Python programs and modules" href="../api_index.html" />
     <link rel="next" title="pywws.YoWindow" href="pywws.YoWindow.html" />
     <link rel="prev" title="pywws.ToTwitter" href="pywws.ToTwitter.html" /> 
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="pywws.ToTwitter.html" title="pywws.ToTwitter"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="../api_index.html" accesskey="U">Python programs and modules</a> &raquo;</li> 
       </ul>
     </div>  
@@ -148,6 +148,15 @@ section in case you switch to running <a class="reference internal" href="pywws.
 <p>Restart your regular pywws program (<a class="reference internal" href="pywws.Hourly.html#module-pywws.Hourly" title="pywws.Hourly"><code class="xref py py-mod docutils literal"><span class="pre">pywws.Hourly</span></code></a> or
 <a class="reference internal" href="pywws.LiveLog.html#module-pywws.LiveLog" title="pywws.LiveLog"><code class="xref py py-mod docutils literal"><span class="pre">pywws.LiveLog</span></code></a>) and visit the appropriate web site to
 see regular updates from your weather station.</p>
+</div>
+<div class="section" id="using-a-different-template">
+<h2>Using a different template<a class="headerlink" href="#using-a-different-template" title="Permalink to this headline">¶</a></h2>
+<p>For some services (mainly MQTT) you might want to write your own
+template to give greater control over the uploaded data. Copy the
+default template file from <code class="docutils literal"><span class="pre">pywws/services</span></code> to your template directory
+and then edit it to do what you want. Now edit <code class="docutils literal"><span class="pre">weather.ini</span></code> and
+change the <code class="docutils literal"><span class="pre">template</span></code> value from <code class="docutils literal"><span class="pre">default</span></code> to the name of your
+custom template.</p>
 </div>
 <div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
@@ -386,6 +395,7 @@ status.ini entry.</li>
 <li><a class="reference internal" href="#configuration">Configuration</a></li>
 <li><a class="reference internal" href="#upload-old-data">Upload old data</a></li>
 <li><a class="reference internal" href="#add-service-s-upload-to-regular-tasks">Add service(s) upload to regular tasks</a></li>
+<li><a class="reference internal" href="#using-a-different-template">Using a different template</a></li>
 <li><a class="reference internal" href="#api">API</a></li>
 </ul>
 </li>
@@ -429,7 +439,7 @@ status.ini entry.</li>
         <li class="right" >
           <a href="pywws.ToTwitter.html" title="pywws.ToTwitter"
              >previous</a> |</li>
-        <li><a href="../index.html">pywws 15.03.0.dev1281 documentation</a> &raquo;</li>
+        <li><a href="../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
           <li><a href="../api_index.html" >Python programs and modules</a> &raquo;</li> 
       </ul>
     </div>
