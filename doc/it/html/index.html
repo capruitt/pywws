@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws &mdash; pywws 13.12.dev1118 documentazione</title>
+    <title>pywws &mdash; pywws 13.12.dev1117 documentazione</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '13.12.dev1118',
+        VERSION:     '13.12.dev1117',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="shortcut icon" href="_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 13.12.dev1118 documentazione" href="#" />
+    <link rel="top" title="pywws 13.12.dev1117 documentazione" href="#" />
     <link rel="next" title="Licenza Pubblica Generale GNU" href="essentials/LICENCE.html" /> 
   </head>
   <body role="document">
@@ -41,7 +41,7 @@
         <li class="right" >
           <a href="essentials/LICENCE.html" title="Licenza Pubblica Generale GNU"
              accesskey="N">successivo</a> |</li>
-        <li><a href="#">pywws 13.12.dev1118 documentazione</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">pywws 13.12.dev1117 documentazione</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -50,8 +50,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="pywws">
-<h1>pywws<a class="headerlink" href="#pywws" title="link permanente per questa intestazione">¶</a></h1>
+  <div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/it/">http://pywws.readthedocs.org/it/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="pywws">
+<h1>pywws<a class="headerlink" href="#pywws" title="Link a questa intestazione">¶</a></h1>
 <img alt="_images/img_1504.jpg" class="align-right" src="_images/img_1504.jpg" />
 <div class="line-block">
 <div class="line">Software Python per Stazione Meteo USB senza filo</div>
@@ -62,27 +67,24 @@
 <p>Questo documento è tradotto nelle seguenti lingue (Le versioni diverse dall&#8217; inglese possono non essere complete o aggiornate):</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first"><a class="reference external" href="../../en/html/index.html">Inglese</a> &#8211; scritto da jim Easterbrook</p>
-</li>
-<li><p class="first"><a class="reference external" href="../../fr/html/index.html">Francese</a> &#8211; tradotto da Jacques Desroches</p>
-</li>
-<li><p class="first"><a class="reference external" href="../../it/html/index.html">Italiano</a> &#8211; tradotto da Edoardo</p>
-</li>
+<li><a class="reference external" href="../../en/l">English</a></li>
+<li><a class="reference external" href="../../fr/">Français</a> &#8211; translated by Jacques Desroches</li>
+<li><a class="reference external" href="../../it/">Italiano</a> &#8211; translated by Edoardo</li>
 </ul>
 </div></blockquote>
 <div class="section" id="introduction">
-<h2>Introduzione<a class="headerlink" href="#introduction" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Introduzione<a class="headerlink" href="#introduction" title="Link a questa intestazione">¶</a></h2>
 <p>pywws è un programma sviluppato in Python per leggere, memorizzare ed elaborare i dati delle stazioni meteo USB senza filo per i seguenti tipi Elecsa AstroTouch 6975, Watson W-8681, WH-1080PC, WH1080, WH1081, WH3080 ecc. Suppongo che tutti i modelli che funzionano con il software EasyWeather per Windows siano compatibili, ma non posso garantirlo.</p>
 <p>Il programma è concepito per funzionare con bassi consumi, piccole memorie come un router. Il suo scopo è creare grafici e pagine Web con i dati letti dalla stazione meteo, generalmente aggiornati ad ogni ora. Si possono inviare i dati a servizi come <a class="reference external" href="http://www.wunderground.com/">Weather Underground</a> e postare i messaggi su <a class="reference external" href="https://twitter.com/">Twitter</a>.</p>
 <p>Ho scritto il programma per le mie necessità, ma ho fatto in modo che sia adattabile alle necessità altrui. Voi potete modificare alcuni o tutti i moduli, o scriverne dei nuovi, per ottenere esattamente quello che desideri.La ragione per cui è stato scelto Python è che rende le modifiche facili. Non abbiate paura, mettetevi alla prova..</p>
 </div>
 <div class="section" id="requirements">
-<h2>Requisiti<a class="headerlink" href="#requirements" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Requisiti<a class="headerlink" href="#requirements" title="Link a questa intestazione">¶</a></h2>
 <p>Il software necessario per eseguire pywws dipende da cosa si intende fare con esso. È necessario Python 2.5 o successiva &#8211; Python 3 è parzialmente supportato, alcune funzionalità dipendono dalle librerie che non sono ancora state portate in Python 3.</p>
 <p>Per ulteriori dettagli, vedi <a class="reference internal" href="essentials/dependencies.html"><em>Dipendenze</em></a>.</p>
 </div>
 <div class="section" id="getting-a-copy-of-pywws">
-<h2>Scaricare una copia di pywws<a class="headerlink" href="#getting-a-copy-of-pywws" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Scaricare una copia di pywws<a class="headerlink" href="#getting-a-copy-of-pywws" title="Link a questa intestazione">¶</a></h2>
 <p>Semplicemente per installare pywws usate il comando <code class="docutils literal"><span class="pre">pip</span></code> scaricando direttamente dal sito <a class="reference external" href="http://pypi.python.org/pypi/pywws/">Python Package Index (PyPI)</a>. Nota questo metodo richiede i privilegi di &#8216;root&#8217;, usate il comando <code class="docutils literal"><span class="pre">sudo</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo pip install pywws
 </pre></div>
@@ -101,7 +103,7 @@ python setup.py build_sphinx
 <p>Questo è facoltativo- - la documentazione è disponibile online se preferisci utilizzare pywws in Inglese.</p>
 <p>Per ulteriori dettagli, vedi <a class="reference internal" href="guides/getstarted.html"><em>Come iniziare con pywws</em></a>.</p>
 <div class="section" id="upgrading-pywws">
-<h3>Aggiornare pywws<a class="headerlink" href="#upgrading-pywws" title="link permanente per questa intestazione">¶</a></h3>
+<h3>Aggiornare pywws<a class="headerlink" href="#upgrading-pywws" title="Link a questa intestazione">¶</a></h3>
 <p>Il metodo utilizzato per aggiornare pywws dipende da come originariamente l&#8217; hai ottenuta. Se hai scaricato un file zip o tar. gz, hai solo bisogno di fare la stessa cosa di nuovo, con la nuova versione, quindi eliminare il vecchio download quando hai finito di impostare quella nuova. (Si noti che l&#8217;aggiornamento è molto più facile se non conservate i template, moduli utente e dati meteo nella stessa directory del file scaricato). Gli utenti <code class="docutils literal"><span class="pre">git</span></code> hanno bisogno del comando <code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code>.Se si è utilizzato <code class="docutils literal"><span class="pre">pip</span></code> è necessario utilizzare l&#8217;opzione di aggiornamento:</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo pip install pywws -U
 </pre></div>
@@ -110,11 +112,11 @@ python setup.py build_sphinx
 </div>
 </div>
 <div class="section" id="documentation">
-<h2>Documentazione<a class="headerlink" href="#documentation" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Documentazione<a class="headerlink" href="#documentation" title="Link a questa intestazione">¶</a></h2>
 <p>La documentazione è inclusa con pywws ed è anche disponibile <a class="reference external" href="http://pythonhosted.org/pywws">online</a>. Un buon punto di partenza è <a class="reference internal" href="guides/getstarted.html"><em>Come iniziare con pywws</em></a> che descrive in dettaglio come installare pywws.</p>
 <p>Se avete domande o non risposte nella documentazione, unitevi alla <a class="reference external" href="http://groups.google.com/group/pywws">pywws Google mailing list / discussion group</a> e chiedete lì. Si noti che il primo messaggio del gruppo non apparirà immediatamente - nuovi poster devono essere approvati da un moderatore, per evitare messaggi di spam.</p>
 <div class="section" id="contents">
-<h3>Contenuto<a class="headerlink" href="#contents" title="link permanente per questa intestazione">¶</a></h3>
+<h3>Contenuto<a class="headerlink" href="#contents" title="Link a questa intestazione">¶</a></h3>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="essentials/LICENCE.html">Licence</a></li>
@@ -179,21 +181,21 @@ python setup.py build_sphinx
 </div>
 </div>
 <div class="section" id="indices-and-tables">
-<h3>Indici e tabelle<a class="headerlink" href="#indices-and-tables" title="link permanente per questa intestazione">¶</a></h3>
+<h3>Indici e tabelle<a class="headerlink" href="#indices-and-tables" title="Link a questa intestazione">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><em>Indice</em></a></li>
-<li><a class="reference internal" href="py-modindex.html"><em>Indice dei Moduli</em></a></li>
-<li><a class="reference internal" href="search.html"><em>Cerca</em></a></li>
+<li><a class="reference internal" href="genindex.html"><span>Indice</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span>Indice dei Moduli</span></a></li>
+<li><a class="reference internal" href="search.html"><span>Cerca</span></a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="credits">
-<h2>Ringraziamenti<a class="headerlink" href="#credits" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Ringraziamenti<a class="headerlink" href="#credits" title="Link a questa intestazione">¶</a></h2>
 <p>Non sarei stato in grado di ottenere tutte le informazioni dalla stazione meteo senza avere accesso ai sorgenti di Michael Pendec&#8217;s programma &#8220;wwsr&#8221;. Sono anche grata alla Dave Wells per la decodifica del <a class="reference external" href="http://www.jim-easterbrook.me.uk/weather/mm/">weather station&#8217;s &#8220;fixed block&#8221; data</a>.</p>
 <p>Infine, un grande ringraziamento a tutti gli utenti pywws che hanno aiutato con domande e suggerimenti e soprattutto a coloro che hanno tradotto pywws e la relativa documentazione in altre lingue.</p>
 </div>
 <div class="section" id="legalese">
-<h2>Licenze<a class="headerlink" href="#legalese" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Licenze<a class="headerlink" href="#legalese" title="Link a questa intestazione">¶</a></h2>
 <div class="line-block">
 <div class="line">pywws - Python software per Stazione Meteo USB senza filo.</div>
 <div class="line"><a class="reference external" href="http://github.com/jim-easterbrook/pywws">http://github.com/jim-easterbrook/pywws</a></div>
@@ -266,12 +268,12 @@ python setup.py build_sphinx
         <li class="right" >
           <a href="essentials/LICENCE.html" title="Licenza Pubblica Generale GNU"
              >successivo</a> |</li>
-        <li><a href="#">pywws 13.12.dev1118 documentazione</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">pywws 13.12.dev1117 documentazione</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

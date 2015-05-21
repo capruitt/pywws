@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.WindRose &mdash; documentation pywws 13.09_r1069</title>
+    <title>pywws.WindRose &mdash; documentation pywws 13.09_r1068</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.09_r1069',
+        VERSION:     '13.09_r1068',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="documentation pywws 13.09_r1069" href="../index.html" />
+    <link rel="top" title="documentation pywws 13.09_r1068" href="../index.html" />
     <link rel="up" title="Programmes et des modules Python" href="index.html" />
     <link rel="next" title="pywws.Template" href="pywws.Template.html" />
     <link rel="prev" title="pywws.Plot" href="pywws.Plot.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="pywws.Plot.html" title="pywws.Plot"
              accesskey="P">précédent</a> |</li>
-        <li><a href="../index.html">documentation pywws 13.09_r1069</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Programmes et des modules Python</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">documentation pywws 13.09_r1068</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Programmes et des modules Python</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,7 +56,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-pywws.WindRose">
+  <div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/fr/">http://pywws.readthedocs.org/fr/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="module-pywws.WindRose">
 <span id="pywws-windrose"></span><h1>pywws.WindRose<a class="headerlink" href="#module-pywws.WindRose" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Tracer une  &#8220;rose des vents&#8221;.</p>
 <div class="highlight-python"><div class="highlight"><pre>usage: python -m pywws.WindRose [options] data_dir temp_dir xml_file output_file
@@ -188,76 +193,8 @@ output_file is the name of the image file to be created e.g. 24hrs.png
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><p class="first last"><code class="xref py py-obj docutils literal"><span class="pre">apparent_temp</span></code>(temp,&nbsp;hr,&nbsp;vent)</p>
-</td>
-<td><p class="first last">Calcule la température apparente (sensation réelle), en utilisant la formule de</p>
-</td>
-</tr>
-<tr class="row-even"><td><p class="first last"><code class="xref py py-obj docutils literal"><span class="pre">cadhumidex</span></code>(temp,&nbsp;humidité)</p>
-</td>
-<td><p class="first last">Calcule l&#8217;Indice d&#8217;Humidité selon les Normes Météo Canadiennes</p>
-</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">dew_point</span></code>(temp,&nbsp;hum)</td>
-<td><p class="first last">Calcule le point de rosée, en utilisant la formule provenant de <a class="reference external" href="http://en.wikipedia.org/wiki/Dew_point">http://en.wikipedia.org/wiki/Dew_point</a>.</p>
-</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">illuminance_wm2</span></code>(lux)</td>
-<td><p class="first last">Conversion approximative de la luminosité en lux, au rayonnement solaire en W/m2</p>
-</td>
-</tr>
 <tr class="row-odd"><td><a class="reference internal" href="#pywws.WindRose.main" title="pywws.WindRose.main"><code class="xref py py-obj docutils literal"><span class="pre">main</span></code></a>([argv])</td>
 <td></td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">pressure_inhg</span></code>(hPa)</td>
-<td><p class="first last">Converti la pression de hectopascals/millibars, à pouces de mercure</p>
-</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">pressure_trend_text</span></code>(trend)</td>
-<td><p class="first last">Converti la tendance de la pression en une chaîne, telle qu&#8217;utilisée par le UK Met Office.</p>
-</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">rain_inch</span></code>(mm)</td>
-<td><p class="first last">Converti les précipitations de millimètres, à pouces</p>
-</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">temp_f</span></code>(c)</td>
-<td><p class="first last">Converti la température de Celsius, à Fahrenheit</p>
-</td>
-</tr>
-<tr class="row-even"><td><p class="first last"><code class="xref py py-obj docutils literal"><span class="pre">usaheatindex</span></code>(temp,&nbsp;humidité,&nbsp;point&nbsp;de&nbsp;rosée)</p>
-</td>
-<td><p class="first last">Calcule l&#8217;Indice de Chaleur selon les normes du Service Météorologique National USA</p>
-</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wind_bft</span></code>(ms)</td>
-<td><p class="first last">Converti la vitesse du vent de mètres par seconde, vers l&#8217;échelle Beaufort</p>
-</td>
-</tr>
-<tr class="row-even"><td><p class="first last"><code class="xref py py-obj docutils literal"><span class="pre">wind_chill</span></code>(temp,&nbsp;vent)</p>
-</td>
-<td><p class="first last">Calcule le refroidissement éolien, en utilisant la formule de</p>
-</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wind_kmph</span></code>(ms)</td>
-<td><p class="first last">Converti la vitesse du vent de mètres par seconde, à kilomètres par heure</p>
-</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wind_kn</span></code>(ms)</td>
-<td><p class="first last">Converti la vitesse du vent de mètres par seconde, à noeuds</p>
-</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wind_mph</span></code>(ms)</td>
-<td><p class="first last">Converti la vitesse du vent de mètres par seconde, en miles par heure</p>
-</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winddir_degrees</span></code>(pts)</td>
-<td><p class="first last">Converti la direction du vent de 0..15 en degrés</p>
-</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winddir_text</span></code>(pts)</td>
-<td><p class="first last">Converti la direction du vent de 0..15, en points cardinaux</p>
-</td>
 </tr>
 </tbody>
 </table>
@@ -268,54 +205,44 @@ output_file is the name of the image file to be created e.g. 24hrs.png
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">BasePlotter</span></code>(params,&nbsp;status,&nbsp;raw_data,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pywws.WindRose.RosePlotter" title="pywws.WindRose.RosePlotter"><code class="xref py py-obj docutils literal"><span class="pre">RosePlotter</span></code></a>(params,&nbsp;status,&nbsp;raw_data,&nbsp;...)</td>
 <td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#pywws.WindRose.RosePlotter" title="pywws.WindRose.RosePlotter"><code class="xref py py-obj docutils literal"><span class="pre">RosePlotter</span></code></a>(params,&nbsp;status,&nbsp;raw_data,&nbsp;...)</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>(year,&nbsp;month,&nbsp;day[,&nbsp;hour[,&nbsp;minute[,&nbsp;...)</td>
-<td>The year, month and day arguments are required.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">timedelta</span></code></td>
-<td><p class="first last">Différence entre deux valeurs de datetime.</p>
-</td>
 </tr>
 </tbody>
 </table>
 <dl class="class">
 <dt id="pywws.WindRose.RosePlotter">
-<em class="property">class </em><code class="descclassname">pywws.WindRose.</code><code class="descname">RosePlotter</code><span class="sig-paren">(</span><em>params</em>, <em>status</em>, <em>raw_data</em>, <em>hourly_data</em>, <em>daily_data</em>, <em>monthly_data</em>, <em>work_dir</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter" title="Permalien vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.WindRose.</code><code class="descname">RosePlotter</code><span class="sig-paren">(</span><em>params</em>, <em>status</em>, <em>raw_data</em>, <em>hourly_data</em>, <em>daily_data</em>, <em>monthly_data</em>, <em>work_dir</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><dl class="method">
 <dt id="pywws.WindRose.RosePlotter.GetPlotList">
-<code class="descname">GetPlotList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter.GetPlotList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter.GetPlotList" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">GetPlotList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter.GetPlotList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter.GetPlotList" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.WindRose.RosePlotter.GetDefaultRows">
-<code class="descname">GetDefaultRows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter.GetDefaultRows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter.GetDefaultRows" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">GetDefaultRows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter.GetDefaultRows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter.GetDefaultRows" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.WindRose.RosePlotter.GetDefaultPlotSize">
-<code class="descname">GetDefaultPlotSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter.GetDefaultPlotSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter.GetDefaultPlotSize" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">GetDefaultPlotSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter.GetDefaultPlotSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter.GetDefaultPlotSize" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.WindRose.RosePlotter.GetPreamble">
-<code class="descname">GetPreamble</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter.GetPreamble"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter.GetPreamble" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">GetPreamble</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter.GetPreamble"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter.GetPreamble" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.WindRose.RosePlotter.PlotData">
-<code class="descname">PlotData</code><span class="sig-paren">(</span><em>plot_no</em>, <em>plot</em>, <em>source</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter.PlotData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter.PlotData" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">PlotData</code><span class="sig-paren">(</span><em>plot_no</em>, <em>plot</em>, <em>source</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#RosePlotter.PlotData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.RosePlotter.PlotData" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="pywws.WindRose.main">
-<code class="descclassname">pywws.WindRose.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.main" title="Permalien vers cette définition">¶</a></dt>
+<code class="descclassname">pywws.WindRose.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/WindRose.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.WindRose.main" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -398,13 +325,13 @@ output_file is the name of the image file to be created e.g. 24hrs.png
         <li class="right" >
           <a href="pywws.Plot.html" title="pywws.Plot"
              >précédent</a> |</li>
-        <li><a href="../index.html">documentation pywws 13.09_r1069</a> &raquo;</li>
-          <li><a href="index.html" >Programmes et des modules Python</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">documentation pywws 13.09_r1068</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Programmes et des modules Python</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

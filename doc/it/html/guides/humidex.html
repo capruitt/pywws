@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Indice di umidità (Humidex) &mdash; pywws 13.12.dev1118 documentazione</title>
+    <title>Indice di umidità (Humidex) &mdash; pywws 13.12.dev1117 documentazione</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.12.dev1118',
+        VERSION:     '13.12.dev1117',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 13.12.dev1118 documentazione" href="../index.html" />
+    <link rel="top" title="pywws 13.12.dev1117 documentazione" href="../index.html" />
     <link rel="up" title="Guide per gli utenti" href="index.html" />
     <link rel="next" title="Programmi Python e moduli" href="../api_index.html" />
     <link rel="prev" title="weather.ini - configurazione del formato del file" href="weather_ini.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="weather_ini.html" title="weather.ini - configurazione del formato del file"
              accesskey="P">precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Guide per gli utenti</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Guide per gli utenti</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,16 +56,21 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="humidity-index-humidex">
-<h1>Indice di umidità (Humidex)<a class="headerlink" href="#humidity-index-humidex" title="link permanente per questa intestazione">¶</a></h1>
+  <div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/it/">http://pywws.readthedocs.org/it/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="humidity-index-humidex">
+<h1>Indice di umidità (Humidex)<a class="headerlink" href="#humidity-index-humidex" title="Link a questa intestazione">¶</a></h1>
 <p><em>Autore della sezione: Rodney Persky</em></p>
 <div class="section" id="background">
-<h2>Premessa<a class="headerlink" href="#background" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Premessa<a class="headerlink" href="#background" title="Link a questa intestazione">¶</a></h2>
 <p>Utilizzare la tua stazione meteo può essere divertente e la segnalazione giornaliera nei siti dei vari dati meteo possono essere molto utili per i vostri vicini per controllare il tempo. Tuttavia, ad un certo punto si potrebbe voler sapere quali effetti ha tempo sul tuo corpo, e se c&#8217;è un modo di dire quando è bene o no lavorare all&#8217;aperto.</p>
 <p>Qui si inserisce in un mondo tutto di calcoli basati sul trasferimento di energia attraverso pareti, e la resistenza da loro offerta. Essa può essere una grande avventura della conoscenza, e consente di risparmiare molto denaro, energia che si muove intorno.</p>
 </div>
 <div class="section" id="introduction">
-<h2>Introduzione<a class="headerlink" href="#introduction" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Introduzione<a class="headerlink" href="#introduction" title="Link a questa intestazione">¶</a></h2>
 <p>Humidex è uno strumento per determinare in che modo il corpo di un individuo reagirà alla combinazione di vento, umidità e temperatura. Sullo sfondo del quale c&#8217;è l&#8217;equilibrio termico tra la vita e la pelle, e&#8217; gratuito per ISO 7243 &#8220;Ambienti caldi - Valutazione dello stress termico sul lavoro l&#8217;uomo&#8221;.  Alcune note importanti,</p>
 <ul class="simple">
 <li><p class="first">Questi indici sono basati su un certo numero di ipotesi che possono risultare in sopra o sottovalutazione del tuo stato interno del corpo</p>
@@ -81,7 +86,7 @@
 </ul>
 </div>
 <div class="section" id="assumptions">
-<h2>Ipotesi<a class="headerlink" href="#assumptions" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Ipotesi<a class="headerlink" href="#assumptions" title="Link a questa intestazione">¶</a></h2>
 <p>Ci sono un certo numero di ipotesi che sono state fatte per fare questo lavoro che influenzerà direttamente la sua utilizzabilità. Queste ipotesi tuttavia non sono state messe a disposizione da Environment Canada, che sono gli sviluppatori originali dell&#8217;Humidex utilizzato nel PYWWS funzione cadhumidex. Tuttavia è abbastanza sicuro nel dire che sarebbe sono state eseguite alcune ipotesi:</p>
 <ul class="simple">
 <li><p class="first">Tipo di abbigliamento, spessore</p>
@@ -105,11 +110,11 @@
 </ul>
 </div>
 <div class="section" id="important-references">
-<h2>Importanti riferimenti<a class="headerlink" href="#important-references" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Importanti riferimenti<a class="headerlink" href="#important-references" title="Link a questa intestazione">¶</a></h2>
 <p>Corso di preparazione per l&#8217;estate - <a class="reference external" href="http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&amp;n=86C0425B-1">http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&amp;n=86C0425B-1</a></p>
 </div>
 <div class="section" id="how-to-use">
-<h2>Come utilizzare<a class="headerlink" href="#how-to-use" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Come utilizzare<a class="headerlink" href="#how-to-use" title="Link a questa intestazione">¶</a></h2>
 <p>La funzione descrittivamente è denominata <code class="docutils literal"><span class="pre">cadhumidex</span></code> e ha i parametri di temperatura e di umidità, essenzialmente la funzione opera come una conversione e può essere utilizzata in maniera diretta</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;ycalc&gt;cadhumidex(data[&#39;temp_out&#39;],data[&#39;hum_out&#39;])&lt;/ycalc&gt;
 </pre></div>
@@ -171,7 +176,7 @@
 </div>
 </div>
 <div class="section" id="not-running-the-latest-update">
-<h2>Non hai eseguito l&#8217;aggiornamento più recente?<a class="headerlink" href="#not-running-the-latest-update" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Non hai eseguito l&#8217;aggiornamento più recente?<a class="headerlink" href="#not-running-the-latest-update" title="Link a questa intestazione">¶</a></h2>
 <p>Se non si esegue l&#8217;aggiornamento più recente o non vuoi, allora questo può essere implementato utilizzando una &lt;ycalc&gt; come segue:</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;ycalc&gt;data[&#39;temp_out&#39;]+0.555*(6.112*10**(7.5*data[&#39;temp_out&#39;]/(237.7+data[&#39;temp_out&#39;]))*data[&#39;hum_out&#39;]/100-10)&lt;/ycalc&gt;
 </pre></div>
@@ -239,13 +244,13 @@
         <li class="right" >
           <a href="weather_ini.html" title="weather.ini - configurazione del formato del file"
              >precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="index.html" >Guide per gli utenti</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Guide per gli utenti</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

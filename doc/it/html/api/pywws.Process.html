@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.Process &mdash; pywws 13.12.dev1118 documentazione</title>
+    <title>pywws.Process &mdash; pywws 13.12.dev1117 documentazione</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.12.dev1118',
+        VERSION:     '13.12.dev1117',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 13.12.dev1118 documentazione" href="../index.html" />
+    <link rel="top" title="pywws 13.12.dev1117 documentazione" href="../index.html" />
     <link rel="up" title="Programmi Python e moduli" href="../api_index.html" />
     <link rel="next" title="pywws.calib" href="pywws.calib.html" />
     <link rel="prev" title="pywws.LogData" href="pywws.LogData.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="pywws.LogData.html" title="pywws.LogData"
              accesskey="P">precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,8 +56,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-pywws.Process">
-<span id="pywws-process"></span><h1>pywws.Process<a class="headerlink" href="#module-pywws.Process" title="link permanente per questa intestazione">¶</a></h1>
+  <div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/it/">http://pywws.readthedocs.org/it/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="module-pywws.Process">
+<span id="pywws-process"></span><h1>pywws.Process<a class="headerlink" href="#module-pywws.Process" title="Link a questa intestazione">¶</a></h1>
 <p>Generare tracciati orari, giornalieri &amp; riepiloghi mensili dei dati meteorologici stazione</p>
 <div class="highlight-python"><div class="highlight"><pre>usage: python -m pywws.Process [options] data_dir
 options are:
@@ -81,30 +86,27 @@ data_dir is the root directory of the weather data
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">ApplicationLogger</span></code>(verbose[,&nbsp;logfile])</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.Process" title="pywws.Process.Process"><code class="xref py py-obj docutils literal"><span class="pre">Process</span></code></a>(params,&nbsp;raw_data,&nbsp;calib_data,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.Process" title="pywws.Process.Process"><code class="xref py py-obj docutils literal"><span class="pre">Process</span></code></a>(params,&nbsp;raw_data,&nbsp;calib_data,&nbsp;...)</td>
 <td><p class="first last">Genera i dati riepilogativi della stazione meteorologica.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.calibrate_data" title="pywws.Process.calibrate_data"><code class="xref py py-obj docutils literal"><span class="pre">calibrate_data</span></code></a>(logger,&nbsp;params,&nbsp;raw_data,&nbsp;...)</td>
+<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.calibrate_data" title="pywws.Process.calibrate_data"><code class="xref py py-obj docutils literal"><span class="pre">calibrate_data</span></code></a>(logger,&nbsp;params,&nbsp;raw_data,&nbsp;...)</td>
 <td><p class="first last">&#8216;Calibrare&#8217;, corregge i dati grezzi (raw), utilizzando una funzione fornita dall&#8217;utente</p>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.generate_daily" title="pywws.Process.generate_daily"><code class="xref py py-obj docutils literal"><span class="pre">generate_daily</span></code></a>(logger,&nbsp;day_end_hour,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.generate_daily" title="pywws.Process.generate_daily"><code class="xref py py-obj docutils literal"><span class="pre">generate_daily</span></code></a>(logger,&nbsp;day_end_hour,&nbsp;...)</td>
 <td><p class="first last">Genera i riepiloghi orari da dati calibrati.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.generate_hourly" title="pywws.Process.generate_hourly"><code class="xref py py-obj docutils literal"><span class="pre">generate_hourly</span></code></a>(logger,&nbsp;calib_data,&nbsp;...)</td>
+<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.generate_hourly" title="pywws.Process.generate_hourly"><code class="xref py py-obj docutils literal"><span class="pre">generate_hourly</span></code></a>(logger,&nbsp;calib_data,&nbsp;...)</td>
 <td><p class="first last">Generare i riepiloghi orari (hourly)  da dati calibrati.</p>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.generate_monthly" title="pywws.Process.generate_monthly"><code class="xref py py-obj docutils literal"><span class="pre">generate_monthly</span></code></a>(logger,&nbsp;rain_day_threshold,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.generate_monthly" title="pywws.Process.generate_monthly"><code class="xref py py-obj docutils literal"><span class="pre">generate_monthly</span></code></a>(logger,&nbsp;rain_day_threshold,&nbsp;...)</td>
 <td><p class="first last">Genera i riepiloghi mensili dai dati giornalieri.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.main" title="pywws.Process.main"><code class="xref py py-obj docutils literal"><span class="pre">main</span></code></a>([argv])</td>
+<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.main" title="pywws.Process.main"><code class="xref py py-obj docutils literal"><span class="pre">main</span></code></a>([argv])</td>
 <td></td>
 </tr>
 </tbody>
@@ -120,199 +122,182 @@ data_dir is the root directory of the weather data
 <td><p class="first last">Calcola la media di più valori di dati.</p>
 </td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">Calib</span></code>(params,&nbsp;stored_data)</td>
-<td><p class="first last">Classe di taratura che implementa il default o la calibrazione da parte dell&#8217;utente.</p>
-</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.DayAcc" title="pywws.Process.DayAcc"><code class="xref py py-obj docutils literal"><span class="pre">DayAcc</span></code></a>(daytime)</td>
+<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.DayAcc" title="pywws.Process.DayAcc"><code class="xref py py-obj docutils literal"><span class="pre">DayAcc</span></code></a>(daytime)</td>
 <td><p class="first last">ìAccumula&#8217; dati meteo per produrre un riepilogo giornaliero.</p>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.HourAcc" title="pywws.Process.HourAcc"><code class="xref py py-obj docutils literal"><span class="pre">HourAcc</span></code></a>(last_rain)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.HourAcc" title="pywws.Process.HourAcc"><code class="xref py py-obj docutils literal"><span class="pre">HourAcc</span></code></a>(last_rain)</td>
 <td><p class="first last">&#8216;Accumula&#8217; i dati meteorologici per produrre un riepilogo ogni ora.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.Maximum" title="pywws.Process.Maximum"><code class="xref py py-obj docutils literal"><span class="pre">Maximum</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.Maximum" title="pywws.Process.Maximum"><code class="xref py py-obj docutils literal"><span class="pre">Maximum</span></code></a>()</td>
 <td><p class="first last">Calcola il  valore massimo e data ora di più valori di dati.</p>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.Minimum" title="pywws.Process.Minimum"><code class="xref py py-obj docutils literal"><span class="pre">Minimum</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.Minimum" title="pywws.Process.Minimum"><code class="xref py py-obj docutils literal"><span class="pre">Minimum</span></code></a>()</td>
 <td><p class="first last">Calcola il valore minimo e data ora di più valori di dati.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pywws.Process.MonthAcc" title="pywws.Process.MonthAcc"><code class="xref py py-obj docutils literal"><span class="pre">MonthAcc</span></code></a>(rain_day_threshold)</td>
+<tr class="row-even"><td><a class="reference internal" href="#pywws.Process.MonthAcc" title="pywws.Process.MonthAcc"><code class="xref py py-obj docutils literal"><span class="pre">MonthAcc</span></code></a>(rain_day_threshold)</td>
 <td><p class="first last">Accumula giornalmente i dati meteo di produrre riepilogo mensile.</p>
-</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">date</span></code></td>
-<td>date(year, month, day) &#8211;&gt; date object</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>(year,&nbsp;month,&nbsp;day[,&nbsp;hour[,&nbsp;minute[,&nbsp;...)</td>
-<td>The year, month and day arguments are required.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">deque</span></code></td>
-<td>deque([iterable[, maxlen]]) &#8211;&gt; deque object</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">timedelta</span></code></td>
-<td><p class="first last">Differenza tra due valori datetime.</p>
 </td>
 </tr>
 </tbody>
 </table>
 <dl class="class">
 <dt id="pywws.Process.Average">
-<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">Average</code><a class="reference internal" href="../_modules/pywws/Process.html#Average"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Average" title="link permanente per questa definizione">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">Average</code><a class="reference internal" href="../_modules/pywws/Process.html#Average"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Average" title="Link a questa definizione">¶</a></dt>
 <dd><p>Calcola la media di più valori di dati.</p>
 <dl class="method">
 <dt id="pywws.Process.Average.add">
-<code class="descname">add</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Average.add"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Average.add" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">add</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Average.add"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Average.add" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Process.Average.result">
-<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Average.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Average.result" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Average.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Average.result" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="pywws.Process.Minimum">
-<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">Minimum</code><a class="reference internal" href="../_modules/pywws/Process.html#Minimum"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Minimum" title="link permanente per questa definizione">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">Minimum</code><a class="reference internal" href="../_modules/pywws/Process.html#Minimum"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Minimum" title="Link a questa definizione">¶</a></dt>
 <dd><p>Calcola il valore minimo e data ora di più valori di dati.</p>
 <dl class="method">
 <dt id="pywws.Process.Minimum.add">
-<code class="descname">add</code><span class="sig-paren">(</span><em>value</em>, <em>time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Minimum.add"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Minimum.add" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">add</code><span class="sig-paren">(</span><em>value</em>, <em>time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Minimum.add"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Minimum.add" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Process.Minimum.result">
-<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Minimum.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Minimum.result" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Minimum.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Minimum.result" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="pywws.Process.Maximum">
-<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">Maximum</code><a class="reference internal" href="../_modules/pywws/Process.html#Maximum"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Maximum" title="link permanente per questa definizione">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">Maximum</code><a class="reference internal" href="../_modules/pywws/Process.html#Maximum"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Maximum" title="Link a questa definizione">¶</a></dt>
 <dd><p>Calcola il  valore massimo e data ora di più valori di dati.</p>
 <dl class="method">
 <dt id="pywws.Process.Maximum.add">
-<code class="descname">add</code><span class="sig-paren">(</span><em>value</em>, <em>time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Maximum.add"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Maximum.add" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">add</code><span class="sig-paren">(</span><em>value</em>, <em>time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Maximum.add"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Maximum.add" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Process.Maximum.result">
-<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Maximum.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Maximum.result" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Maximum.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Maximum.result" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="pywws.Process.HourAcc">
-<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">HourAcc</code><span class="sig-paren">(</span><em>last_rain</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#HourAcc"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.HourAcc" title="link permanente per questa definizione">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">HourAcc</code><span class="sig-paren">(</span><em>last_rain</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#HourAcc"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.HourAcc" title="Link a questa definizione">¶</a></dt>
 <dd><p>&#8216;Accumula&#8217; i dati meteorologici per produrre un riepilogo ogni ora.</p>
 <p>Calcola la velocità media del vento e la raffica di vento massima, trova la direzione del vento dominante e calcola la piovosità totale.</p>
 <dl class="method">
 <dt id="pywws.Process.HourAcc.reset">
-<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#HourAcc.reset"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.HourAcc.reset" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#HourAcc.reset"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.HourAcc.reset" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Process.HourAcc.add_raw">
-<code class="descname">add_raw</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#HourAcc.add_raw"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.HourAcc.add_raw" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">add_raw</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#HourAcc.add_raw"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.HourAcc.add_raw" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Process.HourAcc.result">
-<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#HourAcc.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.HourAcc.result" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#HourAcc.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.HourAcc.result" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="pywws.Process.DayAcc">
-<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">DayAcc</code><span class="sig-paren">(</span><em>daytime</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#DayAcc"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.DayAcc" title="link permanente per questa definizione">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">DayAcc</code><span class="sig-paren">(</span><em>daytime</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#DayAcc"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.DayAcc" title="Link a questa definizione">¶</a></dt>
 <dd><p>ìAccumula&#8217; dati meteo per produrre un riepilogo giornaliero.</p>
 <p>Calcola la velocità media del vento, la raffica massima del vento e max temperatura diurne &amp; min notturna, trova la direzione del vento dominante e calcola la piovosità totale.</p>
 <p>Il giorno si suppone sia dalle 09:00-21:00 e notturno dalle 21:00-09:00 durante l&#8217;ora solare, (10:00-22:00 e 22:00-10:00 durante l&#8217;ora legale), a prescindere dall&#8217;impostazione &#8220;day end hour&#8221;.</p>
 <dl class="method">
 <dt id="pywws.Process.DayAcc.reset">
-<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#DayAcc.reset"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.DayAcc.reset" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#DayAcc.reset"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.DayAcc.reset" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Process.DayAcc.add_raw">
-<code class="descname">add_raw</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#DayAcc.add_raw"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.DayAcc.add_raw" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">add_raw</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#DayAcc.add_raw"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.DayAcc.add_raw" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Process.DayAcc.add_hourly">
-<code class="descname">add_hourly</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#DayAcc.add_hourly"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.DayAcc.add_hourly" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">add_hourly</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#DayAcc.add_hourly"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.DayAcc.add_hourly" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Process.DayAcc.result">
-<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#DayAcc.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.DayAcc.result" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#DayAcc.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.DayAcc.result" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="pywws.Process.MonthAcc">
-<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">MonthAcc</code><span class="sig-paren">(</span><em>rain_day_threshold</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#MonthAcc"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.MonthAcc" title="link permanente per questa definizione">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.Process.</code><code class="descname">MonthAcc</code><span class="sig-paren">(</span><em>rain_day_threshold</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#MonthAcc"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.MonthAcc" title="Link a questa definizione">¶</a></dt>
 <dd><p>Accumula giornalmente i dati meteo di produrre riepilogo mensile.</p>
 <p>Calcola le temperature max diurne min notturna.</p>
 <dl class="method">
 <dt id="pywws.Process.MonthAcc.reset">
-<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#MonthAcc.reset"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.MonthAcc.reset" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#MonthAcc.reset"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.MonthAcc.reset" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Process.MonthAcc.add_daily">
-<code class="descname">add_daily</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#MonthAcc.add_daily"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.MonthAcc.add_daily" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">add_daily</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#MonthAcc.add_daily"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.MonthAcc.add_daily" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Process.MonthAcc.result">
-<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#MonthAcc.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.MonthAcc.result" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#MonthAcc.result"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.MonthAcc.result" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="pywws.Process.calibrate_data">
-<code class="descclassname">pywws.Process.</code><code class="descname">calibrate_data</code><span class="sig-paren">(</span><em>logger</em>, <em>params</em>, <em>raw_data</em>, <em>calib_data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#calibrate_data"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.calibrate_data" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Process.</code><code class="descname">calibrate_data</code><span class="sig-paren">(</span><em>logger</em>, <em>params</em>, <em>raw_data</em>, <em>calib_data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#calibrate_data"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.calibrate_data" title="Link a questa definizione">¶</a></dt>
 <dd><p>&#8216;Calibrare&#8217;, corregge i dati grezzi (raw), utilizzando una funzione fornita dall&#8217;utente</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="pywws.Process.generate_hourly">
-<code class="descclassname">pywws.Process.</code><code class="descname">generate_hourly</code><span class="sig-paren">(</span><em>logger</em>, <em>calib_data</em>, <em>hourly_data</em>, <em>process_from</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#generate_hourly"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.generate_hourly" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Process.</code><code class="descname">generate_hourly</code><span class="sig-paren">(</span><em>logger</em>, <em>calib_data</em>, <em>hourly_data</em>, <em>process_from</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#generate_hourly"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.generate_hourly" title="Link a questa definizione">¶</a></dt>
 <dd><p>Generare i riepiloghi orari (hourly)  da dati calibrati.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="pywws.Process.generate_daily">
-<code class="descclassname">pywws.Process.</code><code class="descname">generate_daily</code><span class="sig-paren">(</span><em>logger</em>, <em>day_end_hour</em>, <em>daytime</em>, <em>calib_data</em>, <em>hourly_data</em>, <em>daily_data</em>, <em>process_from</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#generate_daily"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.generate_daily" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Process.</code><code class="descname">generate_daily</code><span class="sig-paren">(</span><em>logger</em>, <em>day_end_hour</em>, <em>daytime</em>, <em>calib_data</em>, <em>hourly_data</em>, <em>daily_data</em>, <em>process_from</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#generate_daily"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.generate_daily" title="Link a questa definizione">¶</a></dt>
 <dd><p>Genera i riepiloghi orari da dati calibrati.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="pywws.Process.generate_monthly">
-<code class="descclassname">pywws.Process.</code><code class="descname">generate_monthly</code><span class="sig-paren">(</span><em>logger</em>, <em>rain_day_threshold</em>, <em>day_end_hour</em>, <em>time_offset</em>, <em>daily_data</em>, <em>monthly_data</em>, <em>process_from</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#generate_monthly"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.generate_monthly" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Process.</code><code class="descname">generate_monthly</code><span class="sig-paren">(</span><em>logger</em>, <em>rain_day_threshold</em>, <em>day_end_hour</em>, <em>time_offset</em>, <em>daily_data</em>, <em>monthly_data</em>, <em>process_from</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#generate_monthly"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.generate_monthly" title="Link a questa definizione">¶</a></dt>
 <dd><p>Genera i riepiloghi mensili dai dati giornalieri.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="pywws.Process.Process">
-<code class="descclassname">pywws.Process.</code><code class="descname">Process</code><span class="sig-paren">(</span><em>params</em>, <em>raw_data</em>, <em>calib_data</em>, <em>hourly_data</em>, <em>daily_data</em>, <em>monthly_data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Process"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Process" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Process.</code><code class="descname">Process</code><span class="sig-paren">(</span><em>params</em>, <em>raw_data</em>, <em>calib_data</em>, <em>hourly_data</em>, <em>daily_data</em>, <em>monthly_data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#Process"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.Process" title="Link a questa definizione">¶</a></dt>
 <dd><p>Genera i dati riepilogativi della stazione meteorologica.</p>
 <p>La fine del giorno meteorologico (tipicamente 21:00 o 09:00 ora solare) è impostata nel file delle preferenze <code class="docutils literal"><span class="pre">weather.ini</span></code>. Il valore predefinito è 21:00 (22:00 durante l&#8217;ora legale), seguendo la storica convenzione per letture della stazione meteo.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="pywws.Process.main">
-<code class="descclassname">pywws.Process.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.main" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Process.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Process.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Process.main" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -364,13 +349,13 @@ data_dir is the root directory of the weather data
         <li class="right" >
           <a href="pywws.LogData.html" title="pywws.LogData"
              >precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

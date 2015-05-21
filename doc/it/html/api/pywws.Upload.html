@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.Upload &mdash; pywws 13.12.dev1118 documentazione</title>
+    <title>pywws.Upload &mdash; pywws 13.12.dev1117 documentazione</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.12.dev1118',
+        VERSION:     '13.12.dev1117',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 13.12.dev1118 documentazione" href="../index.html" />
+    <link rel="top" title="pywws 13.12.dev1117 documentazione" href="../index.html" />
     <link rel="up" title="Programmi Python e moduli" href="../api_index.html" />
     <link rel="next" title="pywws.ToTwitter" href="pywws.ToTwitter.html" />
     <link rel="prev" title="pywws.ZambrettiCore" href="pywws.ZambrettiCore.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="pywws.ZambrettiCore.html" title="pywws.ZambrettiCore"
              accesskey="P">precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,8 +56,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-pywws.Upload">
-<span id="pywws-upload"></span><h1>pywws.Upload<a class="headerlink" href="#module-pywws.Upload" title="link permanente per questa intestazione">¶</a></h1>
+  <div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/it/">http://pywws.readthedocs.org/it/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="module-pywws.Upload">
+<span id="pywws-upload"></span><h1>pywws.Upload<a class="headerlink" href="#module-pywws.Upload" title="Link a questa intestazione">¶</a></h1>
 <p>Carica i file su un server web tramite ftp o li copia in una directory locale</p>
 <div class="highlight-python"><div class="highlight"><pre>usage: python -m pywws.Upload [options] data_dir file [file...]
 options are:
@@ -68,7 +73,7 @@ file is a file to be uploaded
 </div>
 <p>I dettagli login e ftp vengono letti dal file weather.ini in data_dir.</p>
 <div class="section" id="introduction">
-<h2>Introduzione<a class="headerlink" href="#introduction" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Introduzione<a class="headerlink" href="#introduction" title="Link a questa intestazione">¶</a></h2>
 <p>Questo modulo che carica il file (in genere) di un sito Web <em>tramite</em> ftp/sftp o copia i file in una directory locale (ad esempio se si esegue pywws sul proprio server web). Dettagli della destinazione upload sono memorizzati nel file <code class="docutils literal"><span class="pre">weather.ini</span></code> nella directory dati. L&#8217;unico modo per impostare questi dettagli è modificare il file. Eseguire <a class="reference internal" href="#module-pywws.Upload" title="pywws.Upload"><code class="xref py py-mod docutils literal"><span class="pre">pywws.Upload</span></code></a> una volta per impostare i valori predefiniti, che poi possono cambiare. Ecco cosa è probabile trovare quando si modifica la <code class="docutils literal"><span class="pre">weather.ini</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>[ftp]
 secure = False
@@ -84,7 +89,7 @@ user = username
 <p>L&#8217;opzione <code class="docutils literal"><span class="pre">secure</span></code> consente di passare da ftp normale a sftp (ftp sopra ssh). Alcuni fornitori di hosting offrono questo come un meccanismo di caricamento più sicuro, quindi si dovrebbe probabilmente usare se disponibile.</p>
 </div>
 <div class="section" id="detailed-api">
-<h2>Dettagli API<a class="headerlink" href="#detailed-api" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Dettagli API<a class="headerlink" href="#detailed-api" title="Link a questa intestazione">¶</a></h2>
 <p class="rubric">Funzioni</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -92,10 +97,7 @@ user = username
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">ApplicationLogger</span></code>(verbose[,&nbsp;logfile])</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#pywws.Upload.main" title="pywws.Upload.main"><code class="xref py py-obj docutils literal"><span class="pre">main</span></code></a>([argv])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pywws.Upload.main" title="pywws.Upload.main"><code class="xref py py-obj docutils literal"><span class="pre">main</span></code></a>([argv])</td>
 <td></td>
 </tr>
 </tbody>
@@ -114,32 +116,32 @@ user = username
 </table>
 <dl class="class">
 <dt id="pywws.Upload.Upload">
-<em class="property">class </em><code class="descclassname">pywws.Upload.</code><code class="descname">Upload</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#Upload"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.Upload" title="link permanente per questa definizione">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.Upload.</code><code class="descname">Upload</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#Upload"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.Upload" title="Link a questa definizione">¶</a></dt>
 <dd><dl class="method">
 <dt id="pywws.Upload.Upload.connect">
-<code class="descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#Upload.connect"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.Upload.connect" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#Upload.connect"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.Upload.connect" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Upload.Upload.upload_file">
-<code class="descname">upload_file</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#Upload.upload_file"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.Upload.upload_file" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">upload_file</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#Upload.upload_file"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.Upload.upload_file" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Upload.Upload.disconnect">
-<code class="descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#Upload.disconnect"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.Upload.disconnect" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#Upload.disconnect"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.Upload.disconnect" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.Upload.Upload.upload">
-<code class="descname">upload</code><span class="sig-paren">(</span><em>files</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#Upload.upload"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.Upload.upload" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">upload</code><span class="sig-paren">(</span><em>files</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#Upload.upload"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.Upload.upload" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="pywws.Upload.main">
-<code class="descclassname">pywws.Upload.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.main" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Upload.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Upload.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Upload.main" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -201,13 +203,13 @@ user = username
         <li class="right" >
           <a href="pywws.ZambrettiCore.html" title="pywws.ZambrettiCore"
              >precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

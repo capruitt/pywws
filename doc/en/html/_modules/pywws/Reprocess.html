@@ -1,51 +1,390 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>pywws.Reprocess &mdash; pywws 15.05.0.dev1287 documentation</title>
-    
-    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '15.05.0.dev1287',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pywws.Reprocess &mdash; pywws 15.05.0.dev1300 documentation</title>
+  
+
+  
+  
     <link rel="shortcut icon" href="../../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 15.05.0.dev1287 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" /> 
-  </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li><a href="../../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
-      </ul>
-    </div>  
+  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="copyright" title="Copyright" href="../../copyright.html"/>
+    <link rel="top" title="pywws 15.05.0.dev1300 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> pywws
+        
+
+        
+          
+          <img src="../../_static/pywws_logo.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../essentials/LICENCE.html">Licence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../copyright.html">pywws Contributors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../copyright.html#contributing-to-pywws">Contributing to pywws</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../copyright.html#developer-certificate-of-origin">Developer Certificate of Origin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../essentials/dependencies.html">Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../essentials/dependencies.html#essential">Essential</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../essentials/dependencies.html#usb-library">USB library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../essentials/dependencies.html#mac-os-x">Mac OS X</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../essentials/dependencies.html#other-systems">Other systems</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../essentials/dependencies.html#flexible-timed-tasks">Flexible timed tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../essentials/dependencies.html#running-as-a-daemon">Running as a daemon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../essentials/dependencies.html#graph-drawing">Graph drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../essentials/dependencies.html#secure-website-uploading-sftp">Secure website uploading (sftp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../essentials/dependencies.html#twitter-updates">Twitter updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../essentials/dependencies.html#mqtt">MQTT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../essentials/dependencies.html#to-create-new-language-translations">To create new language translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../essentials/dependencies.html#to-compile-the-documentation">To &#8216;compile&#8217; the documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../essentials/CHANGELOG.html">Change log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">User guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/getstarted.html">How to get started with pywws</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/getstarted.html#installation">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/getstarted.html#easy-installation">Easy installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/getstarted.html#download-and-extract">Download and extract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/getstarted.html#clone-the-repository">Clone the repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/getstarted.html#install-scripts">Install scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/getstarted.html#compile-documentation-optional">Compile documentation (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/getstarted.html#test-the-weather-station-connection">Test the weather station connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/getstarted.html#set-up-your-weather-station">Set up your weather station</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/getstarted.html#set-the-weather-station-logging-interval">Set the weather station logging interval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/getstarted.html#log-your-weather-station-data">Log your weather station data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/getstarted.html#convert-old-easyweather-data-optional">Convert old EasyWeather data (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/getstarted.html#set-some-configuration-options">Set some configuration options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/getstarted.html#process-the-raw-data">Process the raw data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/getstarted.html#read-the-documentation">Read the documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/hourlylogging.html">How to set up &#8216;hourly&#8217; logging with pywws</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/hourlylogging.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/hourlylogging.html#getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/hourlylogging.html#configuring-file-locations">Configuring file locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/hourlylogging.html#configuring-periodic-tasks">Configuring periodic tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/hourlylogging.html#run-as-a-cron-job">Run as a cron job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/livelogging.html">How to set up &#8216;live&#8217; logging with pywws</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/livelogging.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/livelogging.html#getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/livelogging.html#configuring-file-locations">Configuring file locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/livelogging.html#configuring-periodic-tasks">Configuring periodic tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/livelogging.html#asynchronous-uploads">Asynchronous uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/livelogging.html#run-in-the-background">Run in the background</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/livelogging.html#automatic-restarting">Automatic restarting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/integration.html">How to integrate pywws with various weather services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/integration.html#yowindow">YoWindow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/integration.html#twitter">Twitter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/integration.html#other-services">Other &#8220;services&#8221;</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/integration.html#citizen-weather-observer-program">Citizen Weather Observer Program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/integration.html#mqtt">MQTT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/integration.html#uk-met-office">UK Met Office</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/integration.html#open-weather-map">Open Weather Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/integration.html#pws-weather">PWS Weather</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/integration.html#temperatur-nu">temperatur.nu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/integration.html#weather-underground">Weather Underground</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/integration.html#weather-underground-rapidfire-updates">Weather Underground &#8220;RapidFire&#8221; updates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/integration.html#wetter-com">wetter.com</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/twitter.html">How to configure pywws to post messages to Twitter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/twitter.html#install-dependencies">Install dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/twitter.html#create-a-twitter-account">Create a Twitter account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/twitter.html#authorise-pywws-to-post-to-your-twitter-account">Authorise pywws to post to your Twitter account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/twitter.html#add-location-data-optional">Add location data (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/twitter.html#create-a-template">Create a template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/twitter.html#post-your-first-weather-tweet">Post your first weather Tweet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/twitter.html#add-twitter-updates-to-your-hourly-tasks">Add Twitter updates to your hourly tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/twitter.html#include-an-image-in-your-tweet">Include an image in your tweet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/language.html">How to use pywws in another language</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/language.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/language.html#using-an-existing-language-file">Using an existing language file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/language.html#dependencies">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/language.html#translating-the-easy-way-the-transifex-web-site">Translating the easy way - the Transifex web site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/language.html#translating-the-hard-way-using-local-files">Translating the hard way - using local files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/language.html#extract-source-strings">Extract source strings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/language.html#create-language-files">Create language files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/language.html#test-the-pywws-translation">Test the pywws translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/language.html#notes-for-translators">Notes for translators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/language.html#send-jim-the-translation">Send Jim the translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/language.html#translating-the-documentation">Translating the documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/language.html#id1">Extract source strings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/language.html#id2">Create language files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/language.html#viewing-your-translated-documentation">Viewing your translated documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/weather_ini.html">weather.ini - configuration file format</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#config-miscellaneous-system-configuration">config: miscellaneous system configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#paths-directories-in-which-templates-etc-are-stored">paths: directories in which templates etc. are stored</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#live-tasks-to-be-done-every-48-seconds">live: tasks to be done every 48 seconds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#logged-tasks-to-be-done-every-time-the-station-logs-a-data-record">logged: tasks to be done every time the station logs a data record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#cron-tasks-to-be-done-at-a-particular-time-or-date">cron: tasks to be done at a particular time or date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#hourly-tasks-to-be-done-every-hour">hourly: tasks to be done every hour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#hourly-tasks-to-be-done-every-12-hours">12 hourly: tasks to be done every 12 hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#daily-tasks-to-be-done-every-24-hours">daily: tasks to be done every 24 hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#ftp-configuration-of-uploading-to-a-website">ftp: configuration of uploading to a website</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#twitter-configuration-of-posting-to-twitter">twitter: configuration of posting to Twitter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#underground-metoffice-temperaturnu-etc-configuration-of-posting-to-services">underground, metoffice, temperaturnu etc: configuration of posting to &#8216;services&#8217;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/weather_ini.html#status-ini-status-file-format">status.ini - status file format</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#fixed-values-copied-from-the-weather-station-s-fixed-block">fixed: values copied from the weather station&#8217;s &#8220;fixed block&#8221;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#clock-synchronisation-information">clock: synchronisation information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/weather_ini.html#last-update-date-and-time-of-most-recent-task-completions">last update: date and time of most recent task completions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/humidex.html">Humidity Index (Humidex)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/humidex.html#background">Background</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/humidex.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/humidex.html#assumptions">Assumptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/humidex.html#important-references">Important References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/humidex.html#how-to-use">How to use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/humidex.html#not-running-the-latest-update">Not running the latest update?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_index.html">Python modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api_index.html#set-up-and-configure-pywws">Set up and configure pywws</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.TestWeatherStation.html">pywws.TestWeatherStation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.SetWeatherStation.html">pywws.SetWeatherStation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.version.html">pywws.version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.Reprocess.html">pywws.Reprocess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.TwitterAuth.html">pywws.TwitterAuth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.USBQualityTest.html">pywws.USBQualityTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.EWtoPy.html">pywws.EWtoPy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.EWtoPy.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.EWtoPy.html#detailed-api">Detailed API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api_index.html#get-data-and-process-it">Get data and process it</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.Hourly.html">pywws.Hourly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.LiveLog.html">pywws.LiveLog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.livelogdaemon.html">pywws.livelogdaemon</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api_index.html#internal-modules">&#8220;Internal&#8221; modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.Tasks.html">pywws.Tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.LogData.html">pywws.LogData</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.LogData.html#detailed-api">Detailed API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.Process.html">pywws.Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.calib.html">pywws.calib</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.calib.html#calibrate-raw-weather-station-data">Calibrate raw weather station data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.Plot.html">pywws.Plot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Plot.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Plot.html#detailed-api">Detailed API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.WindRose.html">pywws.WindRose</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.WindRose.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.WindRose.html#xml-graph-file-syntax">XML graph file syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.WindRose.html#detailed-api">Detailed API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.Template.html">pywws.Template</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Template.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Template.html#processing-instructions">Processing instructions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Template.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Template.html#detailed-api">Detailed API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.Forecast.html">pywws.Forecast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.ZambrettiCore.html">pywws.ZambrettiCore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.Upload.html">pywws.Upload</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Upload.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Upload.html#detailed-api">Detailed API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.ToTwitter.html">pywws.ToTwitter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.toservice.html">pywws.toservice</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.toservice.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.toservice.html#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.toservice.html#upload-old-data">Upload old data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.toservice.html#add-service-s-upload-to-regular-tasks">Add service(s) upload to regular tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.toservice.html#using-a-different-template">Using a different template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.toservice.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.YoWindow.html">pywws.YoWindow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.WeatherStation.html">pywws.WeatherStation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.WeatherStation.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.WeatherStation.html#detailed-api">Detailed API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.device_libusb1.html">pywws.device_libusb1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_libusb1.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_libusb1.html#testing">Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_libusb1.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.device_pyusb1.html">pywws.device_pyusb1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_pyusb1.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_pyusb1.html#testing">Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_pyusb1.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.device_pyusb.html">pywws.device_pyusb</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_pyusb.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_pyusb.html#testing">Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_pyusb.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.device_ctypes_hidapi.html">pywws.device_ctypes_hidapi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_ctypes_hidapi.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_ctypes_hidapi.html#testing">Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_ctypes_hidapi.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.device_cython_hidapi.html">pywws.device_cython_hidapi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_cython_hidapi.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_cython_hidapi.html#testing">Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.device_cython_hidapi.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.DataStore.html">pywws.DataStore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.DataStore.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.DataStore.html#detailed-api">Detailed API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.TimeZone.html">pywws.TimeZone</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.TimeZone.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.TimeZone.html#detailed-api">Detailed API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.Localisation.html">pywws.Localisation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Localisation.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Localisation.html#using-a-different-language">Using a different language</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/pywws.Localisation.html#creating-a-new-translation">Creating a new translation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.conversions.html">pywws.conversions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.Logger.html">pywws.Logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/pywws.constants.html">pywws.constants</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">pywws</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>pywws.Reprocess</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
             
   <h1>Source code for pywws.Reprocess</h1><div class="highlight"><pre>
 <span class="c">#!/usr/bin/env python</span>
@@ -188,46 +527,59 @@
 </pre></div>
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../../index.html">
-              <img class="logo" src="../../_static/pywws_logo.png" alt="Logo"/>
-            </a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; <a href="../../copyright.html">Copyright</a> 2008-15, pywws contributors.
     </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li><a href="../../index.html">pywws 15.05.0.dev1287 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Module code</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-15, Jim Easterbrook.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'15.05.0.dev1300',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

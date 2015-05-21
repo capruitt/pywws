@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>weather.ini - configurazione del formato del file &mdash; pywws 13.12.dev1118 documentazione</title>
+    <title>weather.ini - configurazione del formato del file &mdash; pywws 13.12.dev1117 documentazione</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.12.dev1118',
+        VERSION:     '13.12.dev1117',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 13.12.dev1118 documentazione" href="../index.html" />
+    <link rel="top" title="pywws 13.12.dev1117 documentazione" href="../index.html" />
     <link rel="up" title="Guide per gli utenti" href="index.html" />
     <link rel="next" title="Indice di umidità (Humidex)" href="humidex.html" />
     <link rel="prev" title="Come utilizzare pywws in un altra lingua" href="language.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="language.html" title="Come utilizzare pywws in un altra lingua"
              accesskey="P">precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Guide per gli utenti</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Guide per gli utenti</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,8 +56,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="weather-ini-configuration-file-format">
-<h1>weather.ini - configurazione del formato del file<a class="headerlink" href="#weather-ini-configuration-file-format" title="link permanente per questa intestazione">¶</a></h1>
+  <div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/it/">http://pywws.readthedocs.org/it/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="weather-ini-configuration-file-format">
+<h1>weather.ini - configurazione del formato del file<a class="headerlink" href="#weather-ini-configuration-file-format" title="Link a questa intestazione">¶</a></h1>
 <p>Quasi tutta la configurazione di pywws è tramite un unico file nella directory dei dati: weather.ini. Questo file ha una struttura simile a quella del file Microsoft Windows INI. Esso è diviso in &#8220;sections&#8221;&#8217;, ognuna delle quali ha un numero di voci &#8220;name = value&#8221;. L&#8217;ordine in cui appaiono spesso delle sezioni non è importante.</p>
 <p>Qualsiasi editor di testo può essere utilizzato per modificare il file. (Non provare a modificarlo durante l&#8217;esecuzione di qualsiasi altro software pywws). In molti casi sarà pywws inizializzare le voci a valori ragionevoli.</p>
 <p>Un altro file, status.ini, viene utilizzato per memorizzare alcune informazioni che pywws utilizza internamente. È descritto alla fine di questo documento. Nell&#8217;uso normale non è necessario modificarlo.</p>
@@ -87,7 +92,7 @@
 </ul>
 </div></blockquote>
 <div class="section" id="config-miscellaneous-system-configuration">
-<h2>config: varie configurazione di sistema<a class="headerlink" href="#config-miscellaneous-system-configuration" title="link permanente per questa intestazione">¶</a></h2>
+<h2>config: varie configurazione di sistema<a class="headerlink" href="#config-miscellaneous-system-configuration" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre>[config]
 ws type = 1080
 day end hour = 21
@@ -117,14 +122,17 @@ gnuplot version = 4.2
 <p><span class="versionmodified">Nuovo nella versione 13.09_r1057: </span><code class="docutils literal"><span class="pre">asynchrouous</span></code> controlla l&#8217;utilizzo di un processo separato in upload di <a class="reference internal" href="../api/pywws.LiveLog.html#module-pywws.LiveLog" title="pywws.LiveLog"><code class="xref py py-mod docutils literal"><span class="pre">pywws.LiveLog</span></code></a>.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">Nuovo nella versione 13.10_r1094: </span><code class="docutils literal"><span class="pre">usb</span> <span class="pre">activity</span> <span class="pre">margin</span></code> controlla l&#8217;algoritmo che evita il problema &#8220;USB lockup&#8221; che colpisce alcune stazioni. Imposta un numero di secondi su entrambi i lati in attesa di attività della stazione (ricevendo una lettura dall&#8217;esterno o la registrazione di una lettura) finchè pywws non ottiene i dati dalla stazione. Se la stazione non è interessato dal problema blocco USB è possibile impostare <code class="docutils literal"><span class="pre">usb</span> <span class="pre">activity</span> <span class="pre">margin</span></code> to 0.0.</p>
+<p><span class="versionmodified">Nuovo nella versione 13.10_r1094: </span><code class="docutils literal"><span class="pre">usb</span> <span class="pre">activity</span> <span class="pre">margin</span></code> controls the algorithm that avoids the &#8220;USB lockup&#8221; problem that affects some stations.
+It sets the number of seconds either side of expected station activity (receiving a reading from outside or logging a reading) that pywws does not get data from the station.
+If your station is not affected by the USB lockup problem you can set <code class="docutils literal"><span class="pre">usb</span> <span class="pre">activity</span> <span class="pre">margin</span></code> to 0.0.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">Nuovo nella versione 13.11_r1102: </span><code class="docutils literal"><span class="pre">gnuplot</span> <span class="pre">version</span></code> dice <a class="reference internal" href="../api/pywws.Plot.html#module-pywws.Plot" title="pywws.Plot"><code class="xref py py-mod docutils literal"><span class="pre">pywws.Plot</span></code></a> e <a class="reference internal" href="../api/pywws.WindRose.html#module-pywws.WindRose" title="pywws.WindRose"><code class="xref py py-mod docutils literal"><span class="pre">pywws.WindRose</span></code></a> quale versione di gnuplot è installata sul tuo computer. Questo permette loro di utilizzare le caratteristiche specifiche della versione per dare una migliore qualità di stampa.</p>
+<p><span class="versionmodified">Nuovo nella versione 13.11_r1102: </span><code class="docutils literal"><span class="pre">gnuplot</span> <span class="pre">version</span></code> tells <a class="reference internal" href="../api/pywws.Plot.html#module-pywws.Plot" title="pywws.Plot"><code class="xref py py-mod docutils literal"><span class="pre">pywws.Plot</span></code></a> and <a class="reference internal" href="../api/pywws.WindRose.html#module-pywws.WindRose" title="pywws.WindRose"><code class="xref py py-mod docutils literal"><span class="pre">pywws.WindRose</span></code></a> what version of gnuplot is installed on your computer.
+This allows them to use version-specific features to give improved plot quality.</p>
 </div>
 </div>
 <div class="section" id="paths-directories-in-which-templates-etc-are-stored">
-<h2>paths: directory in cui sono memorizzati  modelli ecc.<a class="headerlink" href="#paths-directories-in-which-templates-etc-are-stored" title="link permanente per questa intestazione">¶</a></h2>
+<h2>paths: directory in cui sono memorizzati  modelli ecc.<a class="headerlink" href="#paths-directories-in-which-templates-etc-are-stored" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre>[paths]
 templates = /home/$USER/weather/templates/
 graph_templates = /home/$USER/weather/graph_templates/
@@ -136,7 +144,7 @@ local_files = /home/$USER/weather/results/
 <p>Queste tre voci specificano dove i tuoi modelli testo e modelli di grafici vengono archiviati, dove devono essere creati i file temporanei, dove l&#8217;output dei file (che non sono stati caricati) dovrebbe essere messo e (se ne hai uno) la posizione del tuo modulo di calibrazione.</p>
 </div>
 <div class="section" id="live-tasks-to-be-done-every-48-seconds">
-<h2>live: attività da fare ogni 48 secondi<a class="headerlink" href="#live-tasks-to-be-done-every-48-seconds" title="link permanente per questa intestazione">¶</a></h2>
+<h2>live: attività da fare ogni 48 secondi<a class="headerlink" href="#live-tasks-to-be-done-every-48-seconds" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">live</span><span class="p">]</span>
 <span class="n">services</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;underground_rf&#39;</span><span class="p">]</span>
 <span class="n">text</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;yowindow.xml&#39;</span><span class="p">,</span> <span class="s">&#39;L&#39;</span><span class="p">)]</span>
@@ -151,7 +159,7 @@ local_files = /home/$USER/weather/results/
 </div>
 </div>
 <div class="section" id="logged-tasks-to-be-done-every-time-the-station-logs-a-data-record">
-<h2>logged: attività da fare ogni volta la stazione registra un record di dati<a class="headerlink" href="#logged-tasks-to-be-done-every-time-the-station-logs-a-data-record" title="link permanente per questa intestazione">¶</a></h2>
+<h2>logged: attività da fare ogni volta la stazione registra un record di dati<a class="headerlink" href="#logged-tasks-to-be-done-every-time-the-station-logs-a-data-record" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">logged</span><span class="p">]</span>
 <span class="n">services</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;underground&#39;</span><span class="p">,</span> <span class="s">&#39;metoffice&#39;</span><span class="p">]</span>
 <span class="n">text</span> <span class="o">=</span> <span class="p">[]</span>
@@ -163,7 +171,7 @@ local_files = /home/$USER/weather/results/
 <p><code class="docutils literal"><span class="pre">text</span></code> and <code class="docutils literal"><span class="pre">plot</span></code> sono elenchi di modelli di testo e grafici che devono essere elaborati ed, opzionalmente, caricati sul tuo sito Web.</p>
 </div>
 <div class="section" id="hourly-tasks-to-be-done-every-hour">
-<h2>hourly: le attività da fare ogni ora<a class="headerlink" href="#hourly-tasks-to-be-done-every-hour" title="link permanente per questa intestazione">¶</a></h2>
+<h2>hourly: le attività da fare ogni ora<a class="headerlink" href="#hourly-tasks-to-be-done-every-hour" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">hourly</span><span class="p">]</span>
 <span class="n">services</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">text</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;tweet.txt&#39;</span><span class="p">,</span> <span class="s">&#39;T&#39;</span><span class="p">),</span> <span class="s">&#39;24hrs.txt&#39;</span><span class="p">,</span> <span class="s">&#39;6hrs.txt&#39;</span><span class="p">,</span> <span class="s">&#39;7days.txt&#39;</span><span class="p">,</span> <span class="s">&#39;feed_hourly.xml&#39;</span><span class="p">]</span>
@@ -178,7 +186,7 @@ local_files = /home/$USER/weather/results/
 </div>
 </div>
 <div class="section" id="hourly-tasks-to-be-done-every-12-hours">
-<h2>12 hourly: le attività da fare ogni 12 ore<a class="headerlink" href="#hourly-tasks-to-be-done-every-12-hours" title="link permanente per questa intestazione">¶</a></h2>
+<h2>12 hourly: le attività da fare ogni 12 ore<a class="headerlink" href="#hourly-tasks-to-be-done-every-12-hours" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre>[12 hourly]
 services = []
 text = []
@@ -190,7 +198,7 @@ plot = []
 <p><code class="docutils literal"><span class="pre">text</span></code> and <code class="docutils literal"><span class="pre">plot</span></code> sono elenchi di modelli di testo e grafici che devono essere elaborati ed, opzionalmente, caricati sul tuo sito Web.</p>
 </div>
 <div class="section" id="daily-tasks-to-be-done-every-24-hours">
-<h2>daily: le attività da fare ogni 24 ore<a class="headerlink" href="#daily-tasks-to-be-done-every-24-hours" title="link permanente per questa intestazione">¶</a></h2>
+<h2>daily: le attività da fare ogni 24 ore<a class="headerlink" href="#daily-tasks-to-be-done-every-24-hours" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">daily</span><span class="p">]</span>
 <span class="n">services</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;feed_daily.xml&#39;</span><span class="p">]</span>
@@ -202,7 +210,7 @@ plot = []
 <p><code class="docutils literal"><span class="pre">text</span></code> and <code class="docutils literal"><span class="pre">plot</span></code> sono elenchi di modelli di testo e grafici che devono essere elaborati ed, opzionalmente, caricati sul tuo sito Web.</p>
 </div>
 <div class="section" id="ftp-configuration-of-uploading-to-a-website">
-<h2>ftp: configurazione di caricamento su un sito web<a class="headerlink" href="#ftp-configuration-of-uploading-to-a-website" title="link permanente per questa intestazione">¶</a></h2>
+<h2>ftp: configurazione di caricamento su un sito web<a class="headerlink" href="#ftp-configuration-of-uploading-to-a-website" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre>[ftp]
 local site = False
 secure = False
@@ -220,7 +228,7 @@ directory = public_html/weather/data/
 <p><code class="docutils literal"><span class="pre">directory</span></code> specifica il percorso sul sito FTP (o il file system locale) dove devono essere memorizzati i file. Nota che si potrebbe avere la necessità di sperimentare un po&#8217; - potrebbe essere necessario un carattere &#8216;/&#8217; all&#8217;inizio del percorso.</p>
 </div>
 <div class="section" id="twitter-configuration-of-posting-to-twitter">
-<h2>twitter: Configurazione della pubblicazione su Twitter<a class="headerlink" href="#twitter-configuration-of-posting-to-twitter" title="link permanente per questa intestazione">¶</a></h2>
+<h2>twitter: Configurazione della pubblicazione su Twitter<a class="headerlink" href="#twitter-configuration-of-posting-to-twitter" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">twitter</span><span class="p">]</span>
 <span class="n">secret</span> <span class="o">=</span> <span class="n">longstringofrandomcharacters</span>
 <span class="n">key</span> <span class="o">=</span> <span class="n">evenlongerstringofrandomcharacters</span>
@@ -232,7 +240,7 @@ directory = public_html/weather/data/
 <p><code class="docutils literal"><span class="pre">latitude</span></code> and <code class="docutils literal"><span class="pre">longitude</span></code> sono i dati di posizione facoltativi. Se si include la vostra stazione meteo tweet avrà informazioni sulla posizione in modo che gli utenti possano vedere dov&#8217;è la vostra stazione meteo. Potrebbe anche consentire alle persone di trovare la vostra stazione meteo tweet se si cerca per località.</p>
 </div>
 <div class="section" id="underground-metoffice-temperaturnu-etc-configuration-of-posting-to-services">
-<h2>underground, metoffice, temperaturnu ecc: Configurazione della pubblicazione su &#8216;servizi&#8217;<a class="headerlink" href="#underground-metoffice-temperaturnu-etc-configuration-of-posting-to-services" title="link permanente per questa intestazione">¶</a></h2>
+<h2>underground, metoffice, temperaturnu ecc: Configurazione della pubblicazione su &#8216;servizi&#8217;<a class="headerlink" href="#underground-metoffice-temperaturnu-etc-configuration-of-posting-to-services" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">underground</span><span class="p">]</span>
 <span class="n">station</span> <span class="o">=</span> <span class="n">IXYZABA5</span>
 <span class="n">password</span> <span class="o">=</span> <span class="n">secret</span>
@@ -244,7 +252,7 @@ directory = public_html/weather/data/
 </div>
 </div>
 <div class="section" id="status-ini-status-file-format">
-<h1>status.ini - formato del file di stato<a class="headerlink" href="#status-ini-status-file-format" title="link permanente per questa intestazione">¶</a></h1>
+<h1>status.ini - formato del file di stato<a class="headerlink" href="#status-ini-status-file-format" title="Link a questa intestazione">¶</a></h1>
 <p>Questo file è stato scritto da pywws e non dovrebbe (solitamente) essere modificato. Le seguenti sezioni che sono attualmente in uso:</p>
 <blockquote>
 <div><ul class="simple">
@@ -257,7 +265,7 @@ directory = public_html/weather/data/
 </ul>
 </div></blockquote>
 <div class="section" id="fixed-values-copied-from-the-weather-station-s-fixed-block">
-<h2>fixed: valori copiati dalla stazione meteorologica &#8220;fixed block&#8221;.<a class="headerlink" href="#fixed-values-copied-from-the-weather-station-s-fixed-block" title="link permanente per questa intestazione">¶</a></h2>
+<h2>fixed: valori copiati dalla stazione meteorologica &#8220;fixed block&#8221;.<a class="headerlink" href="#fixed-values-copied-from-the-weather-station-s-fixed-block" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre>[fixed]
 fixed block = {...}
 </pre></div>
@@ -265,7 +273,7 @@ fixed block = {...}
 <p><code class="docutils literal"><span class="pre">fixed</span> <span class="pre">block</span></code> tutti i dati memorizzati nei primi 256 byte di memoria della stazione. Questo include i valori massimi e minimi, impostazioni di soglia di allarme, unità di visualizzazione e così via.</p>
 </div>
 <div class="section" id="clock-synchronisation-information">
-<h2>clock: informazioni di sincronizzazione<a class="headerlink" href="#clock-synchronisation-information" title="link permanente per questa intestazione">¶</a></h2>
+<h2>clock: informazioni di sincronizzazione<a class="headerlink" href="#clock-synchronisation-information" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">clock</span><span class="p">]</span>
 <span class="n">station</span> <span class="o">=</span> <span class="mf">1360322930.02</span>
 <span class="n">sensor</span> <span class="o">=</span> <span class="mf">1360322743.69</span>
@@ -274,7 +282,7 @@ fixed block = {...}
 <p>Questi valori sono i tempi misurati quando l&#8217;orologio della stazione registra alcuni dati e quando i sensori esterni trasmettono un nuovo set di dati. Essi sono utilizzati per cercare di impedire che l&#8217;interfaccia USB si blocca se il computer accede alla stazione meteo al tempo stesso di uno di questi eventi, è un problema comune a molte stazioni compatibile con EasyWeather. I tempi sono misurati ogni 24 ore per consentire la deriva negli orologi.</p>
 </div>
 <div class="section" id="last-update-date-and-time-of-most-recent-task-completions">
-<h2>last update: data e ora del completamento delle attività più recenti<a class="headerlink" href="#last-update-date-and-time-of-most-recent-task-completions" title="link permanente per questa intestazione">¶</a></h2>
+<h2>last update: data e ora del completamento delle attività più recenti<a class="headerlink" href="#last-update-date-and-time-of-most-recent-task-completions" title="Link a questa intestazione">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre>[last update]
 hourly = 2013-05-30 19:04:15
 logged = 2013-05-30 19:04:15
@@ -361,13 +369,13 @@ metoffice = 2013-05-30 18:59:15
         <li class="right" >
           <a href="language.html" title="Come utilizzare pywws in un altra lingua"
              >precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="index.html" >Guide per gli utenti</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Guide per gli utenti</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

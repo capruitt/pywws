@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.Localisation &mdash; pywws 13.12.dev1118 documentazione</title>
+    <title>pywws.Localisation &mdash; pywws 13.12.dev1117 documentazione</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.12.dev1118',
+        VERSION:     '13.12.dev1117',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 13.12.dev1118 documentazione" href="../index.html" />
+    <link rel="top" title="pywws 13.12.dev1117 documentazione" href="../index.html" />
     <link rel="up" title="Programmi Python e moduli" href="../api_index.html" />
     <link rel="next" title="pywws.calib" href="pywws.calib.html" />
     <link rel="prev" title="pywws.TimeZone" href="pywws.TimeZone.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="pywws.TimeZone.html" title="pywws.TimeZone"
              accesskey="P">precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,8 +56,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-pywws.Localisation">
-<span id="pywws-localisation"></span><h1>pywws.Localisation<a class="headerlink" href="#module-pywws.Localisation" title="link permanente per questa intestazione">¶</a></h1>
+  <div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/it/">http://pywws.readthedocs.org/it/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="module-pywws.Localisation">
+<span id="pywws-localisation"></span><h1>pywws.Localisation<a class="headerlink" href="#module-pywws.Localisation" title="Link a questa intestazione">¶</a></h1>
 <p>Localisation.py - effetua le traduzioni di stringhe in lingua locale</p>
 <div class="highlight-python"><div class="highlight"><pre>usage: python -m pywws.Localisation [options]
 options are:
@@ -66,12 +71,12 @@ options are:
 </pre></div>
 </div>
 <div class="section" id="introduction">
-<h2>Introduzione<a class="headerlink" href="#introduction" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Introduzione<a class="headerlink" href="#introduction" title="Link a questa intestazione">¶</a></h2>
 <p>Alcuni dei moduli pywws, come WindRose.py, può utilizzare automaticamente la lingua locale per cose come la direzione del vento. Il modulo Localisation.py, per lo più copiato da esempi nella documentazione di Python, permette questo</p>
 <p>Localizzazione di pywws è fatta in due parti - tradurre le stringhe come &#8216;rising very rapidly&#8217;, e cambiando le impostazioni internazionali che controlla le diciture come i nomi dei mesi e la rappresentazione dei numeri (e.g. &#8216;23,2&#8217; cambiando in &#8216;23.2&#8217;). Su alcuni computer potrebbe non essere possibile impostare le impostazioni internazionali, ma è possibile utilizzare le stringhe tradotte.</p>
 </div>
 <div class="section" id="using-a-different-language">
-<h2>Usare un linguaggio diverso<a class="headerlink" href="#using-a-different-language" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Usare un linguaggio diverso<a class="headerlink" href="#using-a-different-language" title="Link a questa intestazione">¶</a></h2>
 <p>Il linguaggio utilizzato da pywws e definito nel file <code class="docutils literal"><span class="pre">weather.ini</span></code> alla sezione <code class="docutils literal"><span class="pre">[config]</span></code>. Questo può essere un codice di due lettere della lingua, ad esempio  <code class="docutils literal"><span class="pre">it</span></code> (Italiano), o si può specificare una variante nazionale, come <code class="docutils literal"><span class="pre">fr_CA</span></code> (Canadian French). Potrebbe anche includere un set di caratteri, ad esempio <code class="docutils literal"><span class="pre">de_DE.UTF-8</span></code>.</p>
 <p>La scelta della lingua è a carico del sistema operativo, così Localisation.py può essere eseguito come programma autonomo per testare i codici di lingua. Un buon punto di partenza potrebbe essere la variabile di ambiente di sistema &#8216; LANG &#8216;, ad esempio:</p>
 <div class="highlight-python"><div class="highlight"><pre>jim@brains:~/Documents/weather/pywws/code$ echo $LANG
@@ -124,7 +129,7 @@ jim@brains:~/Documents/weather/pywws/code$
 </div>
 </div>
 <div class="section" id="creating-a-new-translation">
-<h2>Creazione di una nuova traduzione<a class="headerlink" href="#creating-a-new-translation" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Creazione di una nuova traduzione<a class="headerlink" href="#creating-a-new-translation" title="Link a questa intestazione">¶</a></h2>
 <p>Se non c&#8217;è nessun file di traduzione per la lingua preferita, allora avete bisogno di crearne uno. Vedi <a class="reference internal" href="../guides/language.html"><em>Come utilizzare pywws in un altra lingua</em></a> per istruzioni dettagliate.</p>
 <p class="rubric">Funzioni</p>
 <table border="1" class="longtable docutils">
@@ -152,7 +157,7 @@ jim@brains:~/Documents/weather/pywws/code$
 </table>
 <dl class="function">
 <dt id="pywws.Localisation.SetLocale">
-<code class="descclassname">pywws.Localisation.</code><code class="descname">SetLocale</code><span class="sig-paren">(</span><em>lang</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Localisation.html#SetLocale"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Localisation.SetLocale" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Localisation.</code><code class="descname">SetLocale</code><span class="sig-paren">(</span><em>lang</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Localisation.html#SetLocale"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Localisation.SetLocale" title="Link a questa definizione">¶</a></dt>
 <dd><p>Impostare le impostazioni locali utilizzate dal programma.</p>
 <p>Questo riguarda l&#8217;intera applicazione, cambiando il modo in cui le date, valute e numeri sono rappresentati. Essa non deve essere chiamata da una routine di libreria che può essere utilizzata in un altro programma.</p>
 <p>Il parametro <code class="docutils literal"><span class="pre">lang</span></code> può essere qualsiasi stringa che è riconosciuto da <code class="docutils literal"><span class="pre">locale.setlocale()</span></code>, per esempio <code class="docutils literal"><span class="pre">it</span></code>, <code class="docutils literal"><span class="pre">it_IT</span></code> or <code class="docutils literal"><span class="pre">it_IT.UTF-8</span></code>.</p>
@@ -173,7 +178,7 @@ jim@brains:~/Documents/weather/pywws/code$
 
 <dl class="function">
 <dt id="pywws.Localisation.SetTranslation">
-<code class="descclassname">pywws.Localisation.</code><code class="descname">SetTranslation</code><span class="sig-paren">(</span><em>lang</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Localisation.html#SetTranslation"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Localisation.SetTranslation" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Localisation.</code><code class="descname">SetTranslation</code><span class="sig-paren">(</span><em>lang</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Localisation.html#SetTranslation"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Localisation.SetTranslation" title="Link a questa definizione">¶</a></dt>
 <dd><p>Impostare la traduzione utilizzata da (alcuni) moduli pywws.</p>
 <p>Questo imposta l&#8217;oggetto di traduzione <code class="docutils literal"><span class="pre">Localisation.translation</span></code> per utilizzare una particolare lingua.</p>
 <p>Il parametro <code class="docutils literal"><span class="pre">lang</span></code> può essere qualsiasi stringa nel formato <code class="docutils literal"><span class="pre">it</span></code>, <code class="docutils literal"><span class="pre">it_IT</span></code> o <code class="docutils literal"><span class="pre">it_IT.UTF-8</span></code>. Tutto ciò dopo un carattere <code class="docutils literal"><span class="pre">.</span></code> viene ignorato. Nel caso di una stringa come <code class="docutils literal"><span class="pre">it_IT</span></code>, la routine cercherà un file di lingua <code class="docutils literal"><span class="pre">it_IT</span></code> prima di cercare un file <code class="docutils literal"><span class="pre">it</span></code>.</p>
@@ -194,7 +199,7 @@ jim@brains:~/Documents/weather/pywws/code$
 
 <dl class="function">
 <dt id="pywws.Localisation.SetApplicationLanguage">
-<code class="descclassname">pywws.Localisation.</code><code class="descname">SetApplicationLanguage</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Localisation.html#SetApplicationLanguage"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Localisation.SetApplicationLanguage" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Localisation.</code><code class="descname">SetApplicationLanguage</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Localisation.html#SetApplicationLanguage"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Localisation.SetApplicationLanguage" title="Link a questa definizione">¶</a></dt>
 <dd><p>Impostare le impostazioni internazionali e la traduzione di un programma pywws.</p>
 <p>Questa funzione legge la lingua dal file di configurazione, quindi chiama <a class="reference internal" href="#pywws.Localisation.SetLocale" title="pywws.Localisation.SetLocale"><code class="xref py py-func docutils literal"><span class="pre">SetLocale()</span></code></a> e <a class="reference internal" href="#pywws.Localisation.SetTranslation" title="pywws.Localisation.SetTranslation"><code class="xref py py-func docutils literal"><span class="pre">SetTranslation()</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -209,7 +214,7 @@ jim@brains:~/Documents/weather/pywws/code$
 
 <dl class="function">
 <dt id="pywws.Localisation.main">
-<code class="descclassname">pywws.Localisation.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Localisation.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Localisation.main" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.Localisation.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/Localisation.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.Localisation.main" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -272,13 +277,13 @@ jim@brains:~/Documents/weather/pywws/code$
         <li class="right" >
           <a href="pywws.TimeZone.html" title="pywws.TimeZone"
              >precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

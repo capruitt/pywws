@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.EWtoPy &mdash; pywws 13.12.dev1118 documentazione</title>
+    <title>pywws.EWtoPy &mdash; pywws 13.12.dev1117 documentazione</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.12.dev1118',
+        VERSION:     '13.12.dev1117',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 13.12.dev1118 documentazione" href="../index.html" />
+    <link rel="top" title="pywws 13.12.dev1117 documentazione" href="../index.html" />
     <link rel="up" title="Programmi Python e moduli" href="../api_index.html" />
     <link rel="next" title="pywws.Tasks" href="pywws.Tasks.html" />
     <link rel="prev" title="pywws.USBQualityTest" href="pywws.USBQualityTest.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="pywws.USBQualityTest.html" title="pywws.USBQualityTest"
              accesskey="P">precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,8 +56,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-pywws.EWtoPy">
-<span id="pywws-ewtopy"></span><h1>pywws.EWtoPy<a class="headerlink" href="#module-pywws.EWtoPy" title="link permanente per questa intestazione">¶</a></h1>
+  <div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/it/">http://pywws.readthedocs.org/it/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="module-pywws.EWtoPy">
+<span id="pywws-ewtopy"></span><h1>pywws.EWtoPy<a class="headerlink" href="#module-pywws.EWtoPy" title="Link a questa intestazione">¶</a></h1>
 <p>Converte i dati EasyWeather.dat in formato pywws</p>
 <div class="highlight-python"><div class="highlight"><pre>usage: python -m pywws.EWtoPy [options] EasyWeather_file data_dir
 options are:
@@ -67,13 +72,13 @@ data_dir is the root directory of the weather data
 </pre></div>
 </div>
 <div class="section" id="introduction">
-<h2>Introduzione<a class="headerlink" href="#introduction" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Introduzione<a class="headerlink" href="#introduction" title="Link a questa intestazione">¶</a></h2>
 <p>Questo programma converte i dati dal formato utilizzato dal programma EasyWeather fornito con la stazione meteo nel formato utilizzato da pywws. È utile se hai usato EasyWeather per un po&#8217; prima di scoprire pywws.</p>
 <p>Il file <code class="docutils literal"><span class="pre">EasyWeather.dat</span></code> è utilizzato solo per recuperare i dati prima dell&#8217;installazione di pywws. Siccome la tua stazione meteo ha la propria memoria, è necessario eseguire <a class="reference internal" href="pywws.LogData.html#module-pywws.LogData" title="pywws.LogData"><code class="xref py py-mod docutils literal"><span class="pre">pywws.LogData</span></code></a> prima di <a class="reference internal" href="#module-pywws.EWtoPy" title="pywws.EWtoPy"><code class="xref py py-mod docutils literal"><span class="pre">pywws.EWtoPy</span></code></a> per ridurre al minimo l&#8217;utilizzo del file EasyWeather.dat.</p>
 <p><a class="reference internal" href="#module-pywws.EWtoPy" title="pywws.EWtoPy"><code class="xref py py-mod docutils literal"><span class="pre">pywws.EWtoPy</span></code></a> converte i timestamp di EasyWeather.dat da ora locale in UTC. Questo può causare problemi quando l&#8217;ora legale finisce, con l&#8217;ora solare sembra tornare indietro un&#8217;ora. Il programma tenta di rilevare questo e correggere il timestamp errato, ma non ho potuto testare questo su una varietà di fusi orari.</p>
 </div>
 <div class="section" id="detailed-api">
-<h2>Dettagli API<a class="headerlink" href="#detailed-api" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Dettagli API<a class="headerlink" href="#detailed-api" title="Link a questa intestazione">¶</a></h2>
 <p class="rubric">Funzioni</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -93,18 +98,11 @@ data_dir is the root directory of the weather data
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>(year,&nbsp;month,&nbsp;day[,&nbsp;hour[,&nbsp;minute[,&nbsp;...)</td>
-<td>The year, month and day arguments are required.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">timedelta</span></code></td>
-<td><p class="first last">Differenza tra due valori datetime.</p>
-</td>
-</tr>
 </tbody>
 </table>
 <dl class="function">
 <dt id="pywws.EWtoPy.main">
-<code class="descclassname">pywws.EWtoPy.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/EWtoPy.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.EWtoPy.main" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.EWtoPy.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/EWtoPy.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.EWtoPy.main" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -166,13 +164,13 @@ data_dir is the root directory of the weather data
         <li class="right" >
           <a href="pywws.USBQualityTest.html" title="pywws.USBQualityTest"
              >precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.TimeZone &mdash; documentation pywws 13.09_r1069</title>
+    <title>pywws.TimeZone &mdash; documentation pywws 13.09_r1068</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.09_r1069',
+        VERSION:     '13.09_r1068',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="documentation pywws 13.09_r1069" href="../index.html" />
+    <link rel="top" title="documentation pywws 13.09_r1068" href="../index.html" />
     <link rel="up" title="Programmes et des modules Python" href="index.html" />
     <link rel="next" title="pywws.Localisation" href="pywws.Localisation.html" />
     <link rel="prev" title="pywws.DataStore" href="pywws.DataStore.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="pywws.DataStore.html" title="pywws.DataStore"
              accesskey="P">précédent</a> |</li>
-        <li><a href="../index.html">documentation pywws 13.09_r1069</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Programmes et des modules Python</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">documentation pywws 13.09_r1068</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Programmes et des modules Python</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,7 +56,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-pywws.TimeZone">
+  <div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/fr/">http://pywws.readthedocs.org/fr/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="module-pywws.TimeZone">
 <span id="pywws-timezone"></span><h1>pywws.TimeZone<a class="headerlink" href="#module-pywws.TimeZone" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Fournit un couple d&#8217;objets <code class="xref py py-class docutils literal"><span class="pre">datetime.tzinfo</span></code> représentant l&#8217;heure locale et UTC.</p>
 <div class="section" id="introduction">
@@ -79,56 +84,45 @@
 <tr class="row-even"><td><a class="reference internal" href="#pywws.TimeZone.UTC" title="pywws.TimeZone.UTC"><code class="xref py py-obj docutils literal"><span class="pre">UTC</span></code></a></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>(year,&nbsp;month,&nbsp;day[,&nbsp;hour[,&nbsp;minute[,&nbsp;...)</td>
-<td>The year, month and day arguments are required.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">timedelta</span></code></td>
-<td><p class="first last">Différence entre deux valeurs de datetime.</p>
-</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tzinfo</span></code></td>
-<td><p class="first last">Classe de base abstraite pour les objets d&#8217;informations de fuseau horaire.</p>
-</td>
-</tr>
 </tbody>
 </table>
 <dl class="class">
 <dt id="pywws.TimeZone.UTC">
-<em class="property">class </em><code class="descclassname">pywws.TimeZone.</code><code class="descname">UTC</code><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC" title="Permalien vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.TimeZone.</code><code class="descname">UTC</code><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><dl class="method">
 <dt id="pywws.TimeZone.UTC.utcoffset">
-<code class="descname">utcoffset</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC.utcoffset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC.utcoffset" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">utcoffset</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC.utcoffset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC.utcoffset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.TimeZone.UTC.tzname">
-<code class="descname">tzname</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC.tzname"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC.tzname" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">tzname</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC.tzname"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC.tzname" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.TimeZone.UTC.dst">
-<code class="descname">dst</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC.dst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC.dst" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">dst</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#UTC.dst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.UTC.dst" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="pywws.TimeZone.LocalTimezone">
-<em class="property">class </em><code class="descclassname">pywws.TimeZone.</code><code class="descname">LocalTimezone</code><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone" title="Permalien vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.TimeZone.</code><code class="descname">LocalTimezone</code><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Local time</p>
 <dl class="method">
 <dt id="pywws.TimeZone.LocalTimezone.utcoffset">
-<code class="descname">utcoffset</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone.utcoffset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone.utcoffset" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">utcoffset</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone.utcoffset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone.utcoffset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.TimeZone.LocalTimezone.dst">
-<code class="descname">dst</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone.dst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone.dst" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">dst</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone.dst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone.dst" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.TimeZone.LocalTimezone.tzname">
-<code class="descname">tzname</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone.tzname"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone.tzname" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">tzname</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/TimeZone.html#LocalTimezone.tzname"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.TimeZone.LocalTimezone.tzname" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -192,13 +186,13 @@
         <li class="right" >
           <a href="pywws.DataStore.html" title="pywws.DataStore"
              >précédent</a> |</li>
-        <li><a href="../index.html">documentation pywws 13.09_r1069</a> &raquo;</li>
-          <li><a href="index.html" >Programmes et des modules Python</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">documentation pywws 13.09_r1068</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Programmes et des modules Python</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

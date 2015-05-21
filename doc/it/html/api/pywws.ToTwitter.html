@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.ToTwitter &mdash; pywws 13.12.dev1118 documentazione</title>
+    <title>pywws.ToTwitter &mdash; pywws 13.12.dev1117 documentazione</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.12.dev1118',
+        VERSION:     '13.12.dev1117',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 13.12.dev1118 documentazione" href="../index.html" />
+    <link rel="top" title="pywws 13.12.dev1117 documentazione" href="../index.html" />
     <link rel="up" title="Programmi Python e moduli" href="../api_index.html" />
     <link rel="next" title="pywws.toservice" href="pywws.toservice.html" />
     <link rel="prev" title="pywws.Upload" href="pywws.Upload.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="pywws.Upload.html" title="pywws.Upload"
              accesskey="P">precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,8 +56,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-pywws.ToTwitter">
-<span id="pywws-totwitter"></span><h1>pywws.ToTwitter<a class="headerlink" href="#module-pywws.ToTwitter" title="link permanente per questa intestazione">¶</a></h1>
+  <div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/it/">http://pywws.readthedocs.org/it/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="module-pywws.ToTwitter">
+<span id="pywws-totwitter"></span><h1>pywws.ToTwitter<a class="headerlink" href="#module-pywws.ToTwitter" title="Link a questa intestazione">¶</a></h1>
 <p>Postare messaggi su Twitter</p>
 <div class="highlight-python"><div class="highlight"><pre>usage: python -m pywws.ToTwitter [options] data_dir file
 options are:
@@ -74,10 +79,7 @@ file is the text file to be uploaded
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">ApplicationLogger</span></code>(verbose[,&nbsp;logfile])</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#pywws.ToTwitter.main" title="pywws.ToTwitter.main"><code class="xref py py-obj docutils literal"><span class="pre">main</span></code></a>([argv])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pywws.ToTwitter.main" title="pywws.ToTwitter.main"><code class="xref py py-obj docutils literal"><span class="pre">main</span></code></a>([argv])</td>
 <td></td>
 </tr>
 </tbody>
@@ -92,29 +94,26 @@ file is the text file to be uploaded
 <tr class="row-odd"><td><a class="reference internal" href="#pywws.ToTwitter.ToTwitter" title="pywws.ToTwitter.ToTwitter"><code class="xref py py-obj docutils literal"><span class="pre">ToTwitter</span></code></a>(params)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">pct</span></code></td>
-<td>alias per <code class="xref py py-class docutils literal"><span class="pre">Twitter</span></code></td>
-</tr>
 </tbody>
 </table>
 <dl class="class">
 <dt id="pywws.ToTwitter.ToTwitter">
-<em class="property">class </em><code class="descclassname">pywws.ToTwitter.</code><code class="descname">ToTwitter</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/ToTwitter.html#ToTwitter"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.ToTwitter.ToTwitter" title="link permanente per questa definizione">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.ToTwitter.</code><code class="descname">ToTwitter</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/ToTwitter.html#ToTwitter"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.ToTwitter.ToTwitter" title="Link a questa definizione">¶</a></dt>
 <dd><dl class="method">
 <dt id="pywws.ToTwitter.ToTwitter.Upload">
-<code class="descname">Upload</code><span class="sig-paren">(</span><em>tweet</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/ToTwitter.html#ToTwitter.Upload"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.ToTwitter.ToTwitter.Upload" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">Upload</code><span class="sig-paren">(</span><em>tweet</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/ToTwitter.html#ToTwitter.Upload"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.ToTwitter.ToTwitter.Upload" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.ToTwitter.ToTwitter.UploadFile">
-<code class="descname">UploadFile</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/ToTwitter.html#ToTwitter.UploadFile"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.ToTwitter.ToTwitter.UploadFile" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">UploadFile</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/ToTwitter.html#ToTwitter.UploadFile"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.ToTwitter.ToTwitter.UploadFile" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="pywws.ToTwitter.main">
-<code class="descclassname">pywws.ToTwitter.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/ToTwitter.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.ToTwitter.main" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.ToTwitter.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/ToTwitter.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.ToTwitter.main" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -166,13 +165,13 @@ file is the text file to be uploaded
         <li class="right" >
           <a href="pywws.Upload.html" title="pywws.Upload"
              >precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

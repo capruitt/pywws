@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Come impostare una registrazione ‘live’ con pywws &mdash; pywws 13.12.dev1118 documentazione</title>
+    <title>Come impostare una registrazione ‘live’ con pywws &mdash; pywws 13.12.dev1117 documentazione</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.12.dev1118',
+        VERSION:     '13.12.dev1117',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 13.12.dev1118 documentazione" href="../index.html" />
+    <link rel="top" title="pywws 13.12.dev1117 documentazione" href="../index.html" />
     <link rel="up" title="Guide per gli utenti" href="index.html" />
     <link rel="next" title="Come integrare pywws con vari servizi meteorologici" href="integration.html" />
     <link rel="prev" title="Come impostare ‘hourly’ per la registrazione oraria con pywws" href="hourlylogging.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="hourlylogging.html" title="Come impostare ‘hourly’ per la registrazione oraria con pywws"
              accesskey="P">precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Guide per gli utenti</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Guide per gli utenti</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,14 +56,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="how-to-set-up-live-logging-with-pywws">
-<h1>Come impostare una registrazione &#8216;live&#8217; con pywws<a class="headerlink" href="#how-to-set-up-live-logging-with-pywws" title="link permanente per questa intestazione">¶</a></h1>
+  <div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/it/">http://pywws.readthedocs.org/it/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="how-to-set-up-live-logging-with-pywws">
+<h1>Come impostare una registrazione &#8216;live&#8217; con pywws<a class="headerlink" href="#how-to-set-up-live-logging-with-pywws" title="Link a questa intestazione">¶</a></h1>
 <div class="section" id="introduction">
-<h2>Introduzione<a class="headerlink" href="#introduction" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Introduzione<a class="headerlink" href="#introduction" title="Link a questa intestazione">¶</a></h2>
 <p>Ci sono due abbastanza differenti modalità di funzionamento con pywws. Tradizionalmente con <a class="reference internal" href="../api/pywws.Hourly.html#module-pywws.Hourly" title="pywws.Hourly"><code class="xref py py-mod docutils literal"><span class="pre">Hourly</span></code></a> viene eseguito a intervalli regolari (di solito un&#8217;ora) da cron. Questo è adatto per siti Web abbastanza statici, ma aggiornamenti più frequenti possono essere utili per i siti come Weather Underground (<a class="reference external" href="http://www.wunderground.com/">http://www.wunderground.com/</a>). Il più recente programma <a class="reference internal" href="../api/pywws.LiveLog.html#module-pywws.LiveLog" title="pywws.LiveLog"><code class="xref py py-mod docutils literal"><span class="pre">LiveLog</span></code></a> gira continuamente e può i caricare dati ogni 48 secondi.</p>
 </div>
 <div class="section" id="getting-started">
-<h2>Guida introduttiva<a class="headerlink" href="#getting-started" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Guida introduttiva<a class="headerlink" href="#getting-started" title="Link a questa intestazione">¶</a></h2>
 <p>Prima di tutto, è necessario installare pywws e assicurarsi che si possono ottenere i dati dalla tua stazione meteo. Vedere <a class="reference internal" href="getstarted.html"><em>Come iniziare con pywws</em></a> per i dettagli.</p>
 <p>Esecuzione di prova <a class="reference internal" href="../api/pywws.LiveLog.html#module-pywws.LiveLog" title="pywws.LiveLog"><code class="xref py py-mod docutils literal"><span class="pre">LiveLog</span></code></a> dalla riga di comando, con un alto livello di verbosità in modo da poter vedere ciò che sta accadendo:</p>
 <div class="highlight-python"><div class="highlight"><pre>python -m pywws.LiveLog -vvv ~/weather/data
@@ -72,7 +77,7 @@
 <p>Entro cinque minuti (supponendo di aver impostato un intervallo di registrazione di 5 minuti) si dovrebbe vedere un messaggio &#8216;live_data new ptr&#8217;, seguita dal recupero di eventuali nuovi dati dalla stazione meteo ed elaborarli. Lasciate che <a class="reference internal" href="../api/pywws.LiveLog.html#module-pywws.LiveLog" title="pywws.LiveLog"><code class="xref py py-mod docutils literal"><span class="pre">LiveLog</span></code></a> funzionare per un minuto o due o più, poi fermare il processo digitando &#8216;&lt;Ctrl&gt;C&#8217;.</p>
 </div>
 <div class="section" id="configuring-file-locations">
-<h2>Percorsi dei file di configurazione<a class="headerlink" href="#configuring-file-locations" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Percorsi dei file di configurazione<a class="headerlink" href="#configuring-file-locations" title="Link a questa intestazione">¶</a></h2>
 <p>Aprire il file weather.ini con un editor di testo. Si dovrebbe avere una sezione di <code class="docutils literal"><span class="pre">[paths]</span></code> simile al seguente (dove <code class="docutils literal"><span class="pre">xxx</span></code> è il tuo nome utente):</p>
 <div class="highlight-python"><div class="highlight"><pre>[paths]
 work = /tmp/weather
@@ -85,7 +90,7 @@ local_files = /home/xxx/weather/results/
 <p>Copiare i modelli di testo e grafico nelle directory appropriate. Si possono trovare alcuni esempi forniti con pywws utili per iniziare. Se hai installato pywws con <code class="docutils literal"><span class="pre">pip</span></code> gli esempi dovrebbero essere in <code class="docutils literal"><span class="pre">/usr/share/pywws</span></code> o <code class="docutils literal"><span class="pre">/usr/local/share/pywws</span></code> o simili.</p>
 </div>
 <div class="section" id="configuring-periodic-tasks">
-<h2>Configurazione dell&#8217;esecuzione periodica<a class="headerlink" href="#configuring-periodic-tasks" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Configurazione dell&#8217;esecuzione periodica<a class="headerlink" href="#configuring-periodic-tasks" title="Link a questa intestazione">¶</a></h2>
 <p>In weather.ini si dovrebbe avere una sezione <code class="docutils literal"><span class="pre">[live]</span></code> simile alla seguente:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">live</span><span class="p">]</span>
 <span class="n">services</span> <span class="o">=</span> <span class="p">[]</span>
@@ -133,7 +138,7 @@ text = [(&#39;forecast.txt&#39;, &#39;T&#39;), &#39;allmonths.txt&#39;]
 </div>
 </div>
 <div class="section" id="asynchronous-uploads">
-<h2>Upload asincrono<a class="headerlink" href="#asynchronous-uploads" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Upload asincrono<a class="headerlink" href="#asynchronous-uploads" title="Link a questa intestazione">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified">Nuovo nella versione 13.09_r1057.</span></p>
 </div>
@@ -141,14 +146,14 @@ text = [(&#39;forecast.txt&#39;, &#39;T&#39;), &#39;allmonths.txt&#39;]
 <p>L&#8217;elemento <code class="docutils literal"><span class="pre">asynchronous</span></code> nella sezione <code class="docutils literal"><span class="pre">[config]</span></code> di weather.ini può essere impostato su <code class="docutils literal"><span class="pre">True</span></code> per dire a <a class="reference internal" href="../api/pywws.LiveLog.html#module-pywws.LiveLog" title="pywws.LiveLog"><code class="xref py py-mod docutils literal"><span class="pre">LiveLog</span></code></a> per fare questi caricamenti in un processo separato. Questa funzionalità è ancora un po&#8217; sperimentale &#8211; provatelo a vostro rischio.</p>
 </div>
 <div class="section" id="using-a-utility-script">
-<h2>Utilizzare gli script di utilità<a class="headerlink" href="#using-a-utility-script" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Utilizzare gli script di utilità<a class="headerlink" href="#using-a-utility-script" title="Link a questa intestazione">¶</a></h2>
 <p>L&#8217;installazione di pywws include un breve script <code class="docutils literal"><span class="pre">pywws-livelog.py</span></code> che viene installato in <code class="docutils literal"><span class="pre">/usr/bin</span></code> o <code class="docutils literal"><span class="pre">/usr/local/bin</span></code> o simili. Si dovrebbe essere in grado di utilizzare questo script per eseguire <a class="reference internal" href="../api/pywws.LiveLog.html#module-pywws.LiveLog" title="pywws.LiveLog"><code class="xref py py-mod docutils literal"><span class="pre">LiveLog</span></code></a>:</p>
 <div class="highlight-python"><div class="highlight"><pre>pywws-livelog.py -v ~/weather/data
 </pre></div>
 </div>
 </div>
 <div class="section" id="run-in-the-background">
-<h2>Esecuzione in background<a class="headerlink" href="#run-in-the-background" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Esecuzione in background<a class="headerlink" href="#run-in-the-background" title="Link a questa intestazione">¶</a></h2>
 <p>Al fine di avere :py:mod: <a class="reference internal" href="../api/pywws.LiveLog.html#module-pywws.LiveLog" title="pywws.LiveLog"><code class="xref py py-mod docutils literal"><span class="pre">LiveLog</span></code></a> in esecuzione dopo aver terminato di utilizzare il computer deve essere eseguito come un processo in background.  Nella maggior parte dei sistemi Linux/UNIX è possibile farlo mettendo una e commerciale (&#8216;&amp;&#8217;) alla fine della riga di comando. Per esempio:</p>
 <div class="highlight-python"><div class="highlight"><pre>pywws-livelog.py ~/weather/data &amp;
 </pre></div>
@@ -159,7 +164,7 @@ text = [(&#39;forecast.txt&#39;, &#39;T&#39;), &#39;allmonths.txt&#39;]
 </div>
 </div>
 <div class="section" id="automatic-restarting">
-<h2>Riavvio automatico<a class="headerlink" href="#automatic-restarting" title="link permanente per questa intestazione">¶</a></h2>
+<h2>Riavvio automatico<a class="headerlink" href="#automatic-restarting" title="Link a questa intestazione">¶</a></h2>
 <p>Ci sono diversi modi per configurare un sistema Linux per avviare un programma quando la macchina si avvia. In genere, questi comportano di mettere un file in <code class="docutils literal"><span class="pre">/etc/init.d/</span></code>, che richiede i privilegi di root. Il problema è leggermente più difficile da garantire se un programma si riavvia quando si blocca. La mia soluzione per entrambi i problemi è quello di eseguire il seguente script da cron, ogni ora.</p>
 <div class="highlight-python"><div class="highlight"><pre>#!/bin/sh
 
@@ -251,13 +256,13 @@ echo $! &gt;$pidfile
         <li class="right" >
           <a href="hourlylogging.html" title="Come impostare ‘hourly’ per la registrazione oraria con pywws"
              >precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="index.html" >Guide per gli utenti</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Guide per gli utenti</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.calib &mdash; documentation pywws 13.09_r1069</title>
+    <title>pywws.calib &mdash; documentation pywws 13.09_r1068</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.09_r1069',
+        VERSION:     '13.09_r1068',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="documentation pywws 13.09_r1069" href="../index.html" />
+    <link rel="top" title="documentation pywws 13.09_r1068" href="../index.html" />
     <link rel="up" title="Programmes et des modules Python" href="index.html" />
     <link rel="next" title="pywws.conversions" href="pywws.conversions.html" />
     <link rel="prev" title="pywws.Localisation" href="pywws.Localisation.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="pywws.Localisation.html" title="pywws.Localisation"
              accesskey="P">précédent</a> |</li>
-        <li><a href="../index.html">documentation pywws 13.09_r1069</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Programmes et des modules Python</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">documentation pywws 13.09_r1068</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Programmes et des modules Python</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,7 +56,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-pywws.calib">
+  <div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/fr/">http://pywws.readthedocs.org/fr/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="module-pywws.calib">
 <span id="pywws-calib"></span><h1>pywws.calib<a class="headerlink" href="#module-pywws.calib" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="calibrate-raw-weather-station-data">
 <h2>Calibre les données brutes de la station météo<a class="headerlink" href="#calibrate-raw-weather-station-data" title="Lien permanent vers ce titre">¶</a></h2>
@@ -126,35 +131,28 @@ user_calib = /home/jim/weather/modules/usercalib
 <td><p class="first last">Classe de calibration par défaut</p>
 </td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>(year,&nbsp;month,&nbsp;day[,&nbsp;hour[,&nbsp;minute[,&nbsp;...)</td>
-<td>The year, month and day arguments are required.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">timedelta</span></code></td>
-<td><p class="first last">Différence entre deux valeurs de datetime.</p>
-</td>
-</tr>
 </tbody>
 </table>
 <dl class="class">
 <dt id="pywws.calib.DefaultCalib">
-<em class="property">class </em><code class="descclassname">pywws.calib.</code><code class="descname">DefaultCalib</code><span class="sig-paren">(</span><em>status</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/calib.html#DefaultCalib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.calib.DefaultCalib" title="Permalien vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.calib.</code><code class="descname">DefaultCalib</code><span class="sig-paren">(</span><em>status</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/calib.html#DefaultCalib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.calib.DefaultCalib" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Classe de calibration par défaut</p>
 <p>Cette classe définit la pression relative, en utilisant un décalage de pression lues à partir de la station météorologique, et &#8216;normalise&#8217; la valeur de la direction du vent. C&#8217;est la calibration strictement minimale nécessaire.</p>
 <dl class="method">
 <dt id="pywws.calib.DefaultCalib.calib">
-<code class="descname">calib</code><span class="sig-paren">(</span><em>raw</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/calib.html#DefaultCalib.calib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.calib.DefaultCalib.calib" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">calib</code><span class="sig-paren">(</span><em>raw</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/calib.html#DefaultCalib.calib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.calib.DefaultCalib.calib" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="pywws.calib.Calib">
-<em class="property">class </em><code class="descclassname">pywws.calib.</code><code class="descname">Calib</code><span class="sig-paren">(</span><em>params</em>, <em>status</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/calib.html#Calib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.calib.Calib" title="Permalien vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.calib.</code><code class="descname">Calib</code><span class="sig-paren">(</span><em>params</em>, <em>status</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/calib.html#Calib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pywws.calib.Calib" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Classe qui implémente la calibration par défaut ou la calibration par l&#8217;utilisateur.</p>
 <p>D&#8217;autres modules pywws utilisent cette méthode pour créer un objet de calibration. Le constructeur crée soit un objet de calibration par défaut ou un objet de calibration utilisateur, en fonction de la valeur <code class="docutils literal"><span class="pre">user_calib</span></code> dans la section <code class="docutils literal"><span class="pre">[paths]</span></code> du paramètre <code class="docutils literal"><span class="pre">params</span></code>. Il adopte alors la méthode de calibration de l&#8217;objet :py: meth:<cite>calib</cite> comme sien.</p>
 <dl class="attribute">
 <dt id="pywws.calib.Calib.calibrator">
-<code class="descname">calibrator</code><em class="property"> = None</em><a class="headerlink" href="#pywws.calib.Calib.calibrator" title="Permalien vers cette définition">¶</a></dt>
+<code class="descname">calibrator</code><em class="property"> = None</em><a class="headerlink" href="#pywws.calib.Calib.calibrator" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -221,13 +219,13 @@ user_calib = /home/jim/weather/modules/usercalib
         <li class="right" >
           <a href="pywws.Localisation.html" title="pywws.Localisation"
              >précédent</a> |</li>
-        <li><a href="../index.html">documentation pywws 13.09_r1069</a> &raquo;</li>
-          <li><a href="index.html" >Programmes et des modules Python</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">documentation pywws 13.09_r1068</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Programmes et des modules Python</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

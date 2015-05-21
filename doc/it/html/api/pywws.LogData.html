@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pywws.LogData &mdash; pywws 13.12.dev1118 documentazione</title>
+    <title>pywws.LogData &mdash; pywws 13.12.dev1117 documentazione</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '13.12.dev1118',
+        VERSION:     '13.12.dev1117',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/pywws_logo.ico"/>
-    <link rel="top" title="pywws 13.12.dev1118 documentazione" href="../index.html" />
+    <link rel="top" title="pywws 13.12.dev1117 documentazione" href="../index.html" />
     <link rel="up" title="Programmi Python e moduli" href="../api_index.html" />
     <link rel="next" title="pywws.Process" href="pywws.Process.html" />
     <link rel="prev" title="pywws.Tasks" href="pywws.Tasks.html" /> 
@@ -46,8 +46,8 @@
         <li class="right" >
           <a href="pywws.Tasks.html" title="pywws.Tasks"
              accesskey="P">precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" accesskey="U">Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,8 +56,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-pywws.LogData">
-<span id="pywws-logdata"></span><h1>pywws.LogData<a class="headerlink" href="#module-pywws.LogData" title="link permanente per questa intestazione">¶</a></h1>
+  <div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">pywws documentation is now located at <a class="reference external" href="http://pywws.readthedocs.org/it/">http://pywws.readthedocs.org/it/</a>.
+This copy is no longer being updated and may be out of date.</p>
+</div>
+<div class="section" id="module-pywws.LogData">
+<span id="pywws-logdata"></span><h1>pywws.LogData<a class="headerlink" href="#module-pywws.LogData" title="Link a questa intestazione">¶</a></h1>
 <p>Salva i dati della stazione meteo nel file</p>
 <div class="highlight-python"><div class="highlight"><pre>usage: python -m pywws.LogData [options] data_dir
 options are:
@@ -78,10 +83,7 @@ data_dir is the root directory of the weather data
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">ApplicationLogger</span></code>(verbose[,&nbsp;logfile])</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#pywws.LogData.main" title="pywws.LogData.main"><code class="xref py py-obj docutils literal"><span class="pre">main</span></code></a>([argv])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#pywws.LogData.main" title="pywws.LogData.main"><code class="xref py py-obj docutils literal"><span class="pre">main</span></code></a>([argv])</td>
 <td></td>
 </tr>
 </tbody>
@@ -96,43 +98,36 @@ data_dir is the root directory of the weather data
 <tr class="row-odd"><td><a class="reference internal" href="#pywws.LogData.DataLogger" title="pywws.LogData.DataLogger"><code class="xref py py-obj docutils literal"><span class="pre">DataLogger</span></code></a>(params,&nbsp;status,&nbsp;raw_data)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>(year,&nbsp;month,&nbsp;day[,&nbsp;hour[,&nbsp;minute[,&nbsp;...)</td>
-<td>The year, month and day arguments are required.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">timedelta</span></code></td>
-<td><p class="first last">Differenza tra due valori datetime.</p>
-</td>
-</tr>
 </tbody>
 </table>
 <dl class="class">
 <dt id="pywws.LogData.DataLogger">
-<em class="property">class </em><code class="descclassname">pywws.LogData.</code><code class="descname">DataLogger</code><span class="sig-paren">(</span><em>params</em>, <em>status</em>, <em>raw_data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#DataLogger"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.DataLogger" title="link permanente per questa definizione">¶</a></dt>
+<em class="property">class </em><code class="descclassname">pywws.LogData.</code><code class="descname">DataLogger</code><span class="sig-paren">(</span><em>params</em>, <em>status</em>, <em>raw_data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#DataLogger"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.DataLogger" title="Link a questa definizione">¶</a></dt>
 <dd><dl class="method">
 <dt id="pywws.LogData.DataLogger.check_fixed_block">
-<code class="descname">check_fixed_block</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#DataLogger.check_fixed_block"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.DataLogger.check_fixed_block" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">check_fixed_block</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#DataLogger.check_fixed_block"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.DataLogger.check_fixed_block" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.LogData.DataLogger.catchup">
-<code class="descname">catchup</code><span class="sig-paren">(</span><em>last_date</em>, <em>last_ptr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#DataLogger.catchup"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.DataLogger.catchup" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">catchup</code><span class="sig-paren">(</span><em>last_date</em>, <em>last_ptr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#DataLogger.catchup"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.DataLogger.catchup" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.LogData.DataLogger.log_data">
-<code class="descname">log_data</code><span class="sig-paren">(</span><em>sync=None</em>, <em>clear=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#DataLogger.log_data"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.DataLogger.log_data" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">log_data</code><span class="sig-paren">(</span><em>sync=None</em>, <em>clear=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#DataLogger.log_data"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.DataLogger.log_data" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pywws.LogData.DataLogger.live_data">
-<code class="descname">live_data</code><span class="sig-paren">(</span><em>logged_only=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#DataLogger.live_data"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.DataLogger.live_data" title="link permanente per questa definizione">¶</a></dt>
+<code class="descname">live_data</code><span class="sig-paren">(</span><em>logged_only=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#DataLogger.live_data"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.DataLogger.live_data" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="pywws.LogData.main">
-<code class="descclassname">pywws.LogData.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.main" title="link permanente per questa definizione">¶</a></dt>
+<code class="descclassname">pywws.LogData.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pywws/LogData.html#main"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#pywws.LogData.main" title="Link a questa definizione">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -184,13 +179,13 @@ data_dir is the root directory of the weather data
         <li class="right" >
           <a href="pywws.Tasks.html" title="pywws.Tasks"
              >precedente</a> |</li>
-        <li><a href="../index.html">pywws 13.12.dev1118 documentazione</a> &raquo;</li>
-          <li><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">pywws 13.12.dev1117 documentazione</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api_index.html" >Programmi Python e moduli</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2008-13, Jim Easterbrook.
-      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+      Creato con <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>
