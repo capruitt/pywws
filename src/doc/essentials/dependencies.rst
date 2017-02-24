@@ -1,6 +1,6 @@
 .. pywws - Python software for USB Wireless Weather Stations
    http://github.com/jim-easterbrook/pywws
-   Copyright (C) 2008-15  Jim Easterbrook  jim@jim-easterbrook.me.uk
+   Copyright (C) 2008-16  pywws contributors
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License
@@ -171,7 +171,7 @@ Twitter updates
 The :py:mod:`pywws.ToTwitter` module can be used to send weather status messages to Twitter.
 Posting to Twitter requires these modules:
 
-*  `python-twitter <https://github.com/bear/python-twitter>`_ v1.0 or higher
+*  `python-twitter <https://github.com/bear/python-twitter>`_ v2.1 or higher
 *  `python-oauth2 <https://github.com/simplegeo/python-oauth2>`_
 
 ::
@@ -186,6 +186,9 @@ Posting to Twitter requires these modules:
 ::
 
   sudo pip install tweepy oauth2
+
+Note that ``tweepy`` appears to be the less reliable of the two.
+If you have problems, e.g. with character encoding, try installing ``python-twitter`` instead.
 
 .. versionchanged:: 13.10_r1086
    reenabled use of ``tweepy`` library as an alternative to ``python-twitter``.
@@ -216,7 +219,7 @@ To create new language translations
 -----------------------------------
 
 pywws can be configured to use languages other than English, as described in :doc:`../guides/language`.
-The babel package is required to extract the strings to be translated and compile the translation files.
+The Babel package is required to extract the strings to be translated and to compile the translation files.
 
 *  `babel <http://babel.pocoo.org/>`_
 
@@ -224,21 +227,21 @@ The babel package is required to extract the strings to be translated and compil
 
   sudo pip install babel
 
-Translating the documentation also needs the sphinx-intl package.
-
-*  `sphinx-intl <https://pypi.python.org/pypi/sphinx-intl>`_
-
-::
-
-  sudo pip install sphinx-intl
-
-Copying files to or from Transifex is made easier with the transifex-client package.
+Copying files to or from Transifex requires the transifex-client package.
 
 *  `transifex-client <http://support.transifex.com/customer/portal/topics/440187-transifex-client>`_
 
 ::
 
   sudo pip install transifex-client
+
+Translating the documentation using local files needs the sphinx-intl package.
+
+*  `sphinx-intl <https://pypi.python.org/pypi/sphinx-intl>`_
+
+::
+
+  sudo pip install sphinx-intl
 
 .. versionchanged:: 14.05.dev1209
    pywws previously used the gettext package.

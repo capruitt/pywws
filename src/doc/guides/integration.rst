@@ -157,8 +157,7 @@ UK Met Office
 ^^^^^^^^^^^^^
 
 * Web site: http://wow.metoffice.gov.uk/
-* | Create account:
-  | https://register.metoffice.gov.uk/WaveRegistrationClient/public/newaccount.do?service=weatherobservations
+* Create account: https://register.metoffice.gov.uk/WaveRegistrationClient/public/newaccount.do?service=weatherobservations
 * API: http://wow.metoffice.gov.uk/support/dataformats#automatic
 * Example ``weather.ini`` section::
 
@@ -174,15 +173,15 @@ Open Weather Map
 ^^^^^^^^^^^^^^^^
 
 * Web site: http://openweathermap.org/
-* Create account: http://openweathermap.org/login
-* API: http://openweathermap.org/API
+* Create account: http://home.openweathermap.org/users/sign_up
+* API: http://openweathermap.org/stations#trans
 * Example ``weather.ini`` section::
 
     [openweathermap]
     lat = 51.501
     long = -0.142
     alt = 10
-    user = Elizabeth Windsor
+    user = ElizabethWindsor
     password = corgi
     id = Buck House
     template = default
@@ -190,10 +189,13 @@ Open Weather Map
     [logged]
     services = ['openweathermap', 'underground']
 
+When choosing a user name you should avoid spaces (and probably non-ascii characters as well).
+Having a space in your user name causes strange "internal server error" responses from the server.
+
 The default behaviour is to use your user name to identify the weather station.
-However, it's possible for a user to have more than one weather station, so there is an undocumented ``name`` parameter in the API that can be used to identify the station.
+However, it's possible for a user to have more than one weather station, so there is an optional ``name`` parameter in the API that can be used to identify the station.
 This appears as ``id`` in ``weather.ini``.
-Make sure you don't choose a name that is already in use.
+Make sure you choose a name that is not already in use.
 
 PWS Weather
 ^^^^^^^^^^^
@@ -218,12 +220,14 @@ temperatur.nu
 * Example ``weather.ini`` section::
 
     [temperaturnu]
-    id = ???
-    town = ???
+    hash = ???
     template = default
 
     [logged]
     services = ['temperaturnu', 'underground']
+
+You receive the hash value from the temperatur.nu admins during sign
+up.  It looks like "d3b07384d113edec49eaa6238ad5ff00".
 
 Weather Underground
 ^^^^^^^^^^^^^^^^^^^
@@ -244,6 +248,11 @@ Weather Underground "RapidFire" updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Weather Underground has a second upload URL for real time updates as little as 2.5 seconds apart.
 If you run pywws in 'live logging' mode (see :doc:`livelogging`) you can use this to send updates every 48 seconds, by adding 'underground_rf' to the ``[live]`` tasks section in ``weather.ini``::
+
+ [underground]
+ station = ABCDEFGH1
+ password = xxxxxxx
+ template = default
 
  [live]
  services = ['underground_rf']

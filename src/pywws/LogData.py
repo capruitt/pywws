@@ -2,7 +2,7 @@
 
 # pywws - Python software for USB Wireless Weather Stations
 # http://github.com/jim-easterbrook/pywws
-# Copyright (C) 2008-15 pywws contributors
+# Copyright (C) 2008-16 pywws contributors
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -73,10 +73,10 @@ import os
 import sys
 import time
 
-from .constants import SECOND, HOUR
-from . import DataStore
-from .Logger import ApplicationLogger
-from .WeatherStation import weather_station
+from pywws.constants import SECOND, HOUR
+from pywws import DataStore
+from pywws.Logger import ApplicationLogger
+from pywws.WeatherStation import weather_station
 
 class DataLogger(object):
     def __init__(self, params, status, raw_data):
@@ -167,7 +167,8 @@ class DataLogger(object):
                     duplicates.append(last_date)
                     saved_date = self.raw_data.before(saved_date)
                     saved_ptr = self.ws.dec_ptr(saved_ptr)
-            if data['delay'] is None or data['delay'] > 30:
+            if (data['delay'] is None or
+                    data['delay'] > max(fixed_block['read_period'] * 2, 35)):
                 self.logger.error('invalid data at %04x, %s',
                                   last_ptr, last_date.isoformat(' '))
                 last_date -= timedelta(minutes=fixed_block['read_period'])

@@ -2,7 +2,7 @@
 
 # pywws - Python software for USB Wireless Weather Stations
 # http://github.com/jim-easterbrook/pywws
-# Copyright (C) 2008-15  pywws contributors
+# Copyright (C) 2008-16  pywws contributors
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -29,14 +29,14 @@ import os
 import shutil
 import threading
 
-from .calib import Calib
-from . import Plot
-from . import Template
-from .TimeZone import STDOFFSET, Local
-from .toservice import ToService
-from . import Upload
-from . import WindRose
-from . import YoWindow
+from pywws.calib import Calib
+from pywws import Plot
+from pywws import Template
+from pywws.TimeZone import STDOFFSET, local_utc_offset
+from pywws.toservice import ToService
+from pywws import Upload
+from pywws import WindRose
+from pywws import YoWindow
 
 class RegularTasks(object):
     def __init__(self, params, status,
@@ -54,6 +54,9 @@ class RegularTasks(object):
         self.flush = eval(self.params.get('config', 'frequent writes', 'False'))
         # get directories
         self.work_dir = self.params.get('paths', 'work', '/tmp/weather')
+        if not os.path.isdir(self.work_dir):
+            raise RuntimeError(
+                'Directory "' + self.work_dir + '" does not exist.')
         self.template_dir = self.params.get(
             'paths', 'templates', os.path.expanduser('~/weather/templates/'))
         self.graph_template_dir = self.params.get(
@@ -77,7 +80,7 @@ class RegularTasks(object):
         self.uploader = Upload.Upload(self.params)
         self.uploads_directory = os.path.join(self.work_dir, 'uploads')
         if not os.path.isdir(self.uploads_directory):
-            os.makedirs(self.uploads_directory)
+            os.mkdir(self.uploads_directory)
         # delay creation of a Twitter object until we know it's needed
         self.twitter = None
         # create a YoWindow object
@@ -96,7 +99,7 @@ class RegularTasks(object):
             self.cron[section].get_prev()
             last_update = self.status.get_datetime('last update', section)
             if last_update:
-                last_update = last_update + Local.utcoffset(last_update)
+                last_update = last_update + local_utc_offset(last_update)
                 while self.cron[section].get_current(datetime) <= last_update:
                     self.cron[section].get_next()
         # create service uploader objects
@@ -250,7 +253,8 @@ class RegularTasks(object):
                     uploads.append(upload)
         if local_files:
             if not os.path.isdir(self.local_dir):
-                os.makedirs(self.local_dir)
+                raise RuntimeError(
+                    'Directory "' + self.local_dir + '" does not exist.')
             for file in local_files:
                 targ = os.path.join(
                     self.local_dir, os.path.basename(file))
@@ -275,7 +279,7 @@ class RegularTasks(object):
         if not now:
             now = datetime.utcnow()
         # convert to local time
-        local_now = now + Local.utcoffset(now)
+        local_now = now + local_utc_offset(now)
         # get list of due sections
         sections = []
         for section in self.cron:
@@ -380,11 +384,11 @@ class RegularTasks(object):
 
     def do_twitter(self, template, data=None):
         if not self.twitter:
-            from . import ToTwitter
+            from pywws import ToTwitter
             self.twitter = ToTwitter.ToTwitter(self.params)
         self.logger.info("Templating %s", template)
         input_file = os.path.join(self.template_dir, template)
-        tweet = self.templater.make_text(input_file, live_data=data)[:140]
+        tweet = self.templater.make_text(input_file, live_data=data)
         self.tweet_queue.append(tweet)
         if self.asynch:
             self.wake_thread.set()

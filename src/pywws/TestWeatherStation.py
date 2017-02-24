@@ -2,7 +2,7 @@
 
 # pywws - Python software for USB Wireless Weather Stations
 # http://github.com/jim-easterbrook/pywws
-# Copyright (C) 2008-14  Jim Easterbrook  jim@jim-easterbrook.me.uk
+# Copyright (C) 2008-16  pywws contributors
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -52,11 +52,12 @@ __doc__ %= __usage__ % ('python -m pywws.TestWeatherStation')
 
 import datetime
 import getopt
+import pprint
 import sys
 import time
 
-from .Logger import ApplicationLogger
-from . import WeatherStation
+from pywws.Logger import ApplicationLogger
+from pywws import WeatherStation
 
 def raw_dump(pos, data):
     print "%04x" % pos,
@@ -119,7 +120,7 @@ def main(argv=None):
         return 3
     if decode:
         # dump entire fixed block
-        print ws.get_fixed_block()
+        pprint.pprint(ws.get_fixed_block())
         # dump a few selected items
         print "min -> temp_out ->", ws.get_fixed_block(['min', 'temp_out'])
         print "alarm -> hum_out ->", ws.get_fixed_block(['alarm', 'hum_out'])
@@ -146,7 +147,8 @@ def main(argv=None):
         for i in range(history_count):
             if decode:
                 data = ws.get_data(ptr)
-                print date, data
+                print date
+                pprint.pprint(data)
                 date = date - datetime.timedelta(minutes=data['delay'])
             else:
                 raw_dump(ptr, ws.get_raw_data(ptr))

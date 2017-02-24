@@ -1,6 +1,6 @@
 # pywws - Python software for USB Wireless Weather Stations
 # http://github.com/jim-easterbrook/pywws
-# Copyright (C) 2008-15  pywws contributors
+# Copyright (C) 2008-16  pywws contributors
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -78,7 +78,7 @@ import sys
 from threading import Lock
 import time
 
-from .constants import DAY
+from pywws.constants import DAY
 
 def safestrptime(date_string, format=None):
     # time.strptime is time consuming (because it's so flexible?) so don't use
@@ -97,7 +97,8 @@ class ParamStore(object):
         self._lock = Lock()
         with self._lock:
             if not os.path.isdir(root_dir):
-                os.makedirs(root_dir)
+                raise RuntimeError(
+                    'Directory "' + root_dir + '" does not exist.')
             self._path = os.path.join(root_dir, file_name)
             self._dirty = False
             # open config file
@@ -215,6 +216,8 @@ class _Cache(object):
 class core_store(object):
     def __init__(self, root_dir):
         self._root_dir = root_dir
+        if not os.path.isdir(self._root_dir):
+            os.mkdir(self._root_dir)
         # initialise caches
         self._wr_cache = _Cache()
         self._rd_cache = _Cache()

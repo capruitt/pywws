@@ -2,7 +2,7 @@
 
 # pywws - Python software for USB Wireless Weather Stations
 # http://github.com/jim-easterbrook/pywws
-# Copyright (C) 2008-15  pywws contributors
+# Copyright (C) 2008-16  pywws contributors
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -160,10 +160,10 @@ import urllib
 import urllib2
 import urlparse
 
-from . import DataStore
-from .Logger import ApplicationLogger
-from . import Template
-from . import __version__
+from pywws import DataStore
+from pywws.Logger import ApplicationLogger
+from pywws import Template
+from pywws import __version__
 
 PARENT_MARGIN = timedelta(minutes=2)
 
@@ -207,7 +207,10 @@ class ToService(object):
         self.old_response = None
         self.old_ex = None
         # set default socket timeout, so urlopen calls don't hang forever
-        socket.setdefaulttimeout(30)
+        if eval(self.params.get('config', 'asynchronous', 'False')):
+            socket.setdefaulttimeout(60)
+        else:
+            socket.setdefaulttimeout(20)
         # open params file
         service_params = SafeConfigParser()
         service_params.optionxform = str
@@ -336,7 +339,7 @@ class ToService(object):
             "port [%s] with a client_id [%s] and retain is %s",
             timestamp.isoformat(' '), topic, hostname, port, client_id, retain)
 
-        mosquitto_client.connect(hostname, port)
+        mosquitto_client.connect(hostname, int(port))
         mosquitto_client.publish(topic, json.dumps(prepared_data), retain=retain)
 
 ##        commented out as sending the data as a json object (above)
@@ -404,10 +407,13 @@ class ToService(object):
             finally:
                 sock.close()
         except Exception, ex:
-            e = str(ex)
-            if e != self.old_ex:
-                self.logger.error(e)
-                self.old_ex = e
+            new_ex = str(ex)
+            if new_ex == self.old_ex:
+                log = self.logger.debug
+            else:
+                log = self.logger.error
+                self.old_ex = new_ex
+            log('exc: %s', new_ex)
             return False
         if not ignore_last_update:
             self.set_last_update(timestamp)
@@ -440,42 +446,53 @@ class ToService(object):
         coded_data = urllib.urlencode(prepared_data)
         self.logger.debug(coded_data)
         new_ex = self.old_ex
-        extra_ex = []
+        ex_info = []
+        success = False
         try:
-            try:
-                if self.use_get:
-                    request = urllib2.Request(self.server + '?' + coded_data)
-                else:
-                    request = urllib2.Request(self.server, coded_data.encode('ASCII'))
-                if self.auth_type == 'basic':
-                    request.add_header('Authorization', self.auth)
-                wudata = urllib2.urlopen(request)
-            except urllib2.HTTPError, ex:
-                if ex.code != 400:
-                    raise
-                wudata = ex
-            response = wudata.readlines()
-            wudata.close()
-            if len(response) == len(self.expected_result):
-                for actual, expected in zip(response, self.expected_result):
-                    actual = actual.decode('utf-8')
+            if self.use_get:
+                request = urllib2.Request(self.server + '?' + coded_data)
+            else:
+                request = urllib2.Request(self.server, coded_data.encode('ASCII'))
+            if self.auth_type == 'basic':
+                request.add_header('Authorization', self.auth)
+            rsp = urllib2.urlopen(request)
+            response = rsp.readlines()
+            rsp.close()
+            if response == self.old_response:
+                log = self.logger.debug
+            else:
+                log = self.logger.error
+                self.old_response = response
+            for line in response:
+                log('rsp: %s', line.strip())
+            for n, expected in enumerate(self.expected_result):
+                if n < len(response):
+                    actual = response[n].decode('utf-8')
                     if not re.match(expected, actual):
                         break
-                else:
-                    self.old_response = response
-                    if not ignore_last_update:
-                        self.set_last_update(timestamp)
-                    return True
-            if response != self.old_response:
-                for line in response:
-                    self.logger.error(line.strip())
-            self.old_response = response
+            else:
+                self.old_response = response
+                if not ignore_last_update:
+                    self.set_last_update(timestamp)
+                return True
+            return False
         except urllib2.HTTPError, ex:
-            new_ex = str(ex)
-            extra_ex = str(ex.info()).split('\n')
-            for line in ex.readlines():
-                line = line.decode('utf-8')
-                extra_ex.append(re.sub('<.+?>', '', line))
+            if ex.code == 429 and self.service_name == 'metoffice':
+                # UK Met Office server uses 429 to signal duplicate data
+                success = True
+            if sys.version_info >= (2, 7):
+                new_ex = '[%d]%s' % (ex.code, ex.reason)
+            else:
+                new_ex = str(ex)
+            ex_info = str(ex.info()).split('\n')
+            try:
+                for line in ex.readlines():
+                    line = line.decode('utf-8')
+                    ex_info.append(re.sub('<.+?>', '', line))
+            except Exception:
+                pass
+        except urllib2.URLError, ex:
+            new_ex = str(ex.reason)
         except Exception, ex:
             new_ex = str(ex)
         if new_ex == self.old_ex:
@@ -483,12 +500,14 @@ class ToService(object):
         else:
             log = self.logger.error
             self.old_ex = new_ex
-        log(new_ex)
-        for extra in extra_ex:
+        log('exc: %s', new_ex)
+        for extra in ex_info:
             extra = extra.strip()
             if extra:
-                log(extra)
-        return False
+                log('info: %s', extra)
+        if success and not ignore_last_update:
+            self.set_last_update(timestamp)
+        return success
 
     def next_data(self, catchup, live_data, ignore_last_update=False):
         """Get weather data records to upload.
